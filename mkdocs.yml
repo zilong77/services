@@ -1,0 +1,26 @@
+site_name: KyroNode Docs
+site_url: https://kyronode.github.io/docs
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.expand
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - About KyroNode: about.md
+  - Mainnet:
+      - Overview: mainnet/_index.md
+      - Chain1:
+          - Installation: mainnet/chain1/installation.md
+          - Cheat Sheet: mainnet/chain1/cheatsheet.md
+          - Upgrade: mainnet/chain1/upgrade.md
+  - Testnet:
+      - Overview: testnet/_index.md
+      - ChainA:
+          - Installation: testnet/chainA/installation.md
+          - Cheat Sheet: testnet/chainA/cheatsheet.md
+          - Upgrade: testnet/chainA/upgrade.md
