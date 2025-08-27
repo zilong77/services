@@ -8,8 +8,10 @@
       
       
       
-        <link rel="canonical" href="https://services.kyronode.xyz/testnet/chainA/installation/">
+        <link rel="canonical" href="https://services.kyronode.xyz/testnet/Kiichain/upgrade/">
       
+      
+        <link rel="prev" href="../cheatsheet/">
       
       
       
@@ -18,7 +20,7 @@
     
     
       
-        <title>🚀 Node Installation Guide - Kyronode Services</title>
+        <title>Upgrade - Kyronode Services</title>
       
     
     
@@ -60,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#node-installation-guide" class="md-skip">
+        <a href="#upgrade-chaina-testnet" class="md-skip">
           Skip to content
         </a>
       
@@ -93,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              🚀 Node Installation Guide
+              Upgrade
             
           </span>
         </div>
@@ -224,10 +226,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../_index/" class="md-tabs__link">
           
   
@@ -515,26 +519,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -547,7 +554,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Testnet
@@ -581,8 +588,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -591,13 +600,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
         
           
           <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
@@ -613,7 +620,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             Kiichain
@@ -627,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Kiichain/installation.md" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         
   
   
@@ -650,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Kiichain/cheatsheet.md" class="md-nav__link">
+      <a href="../cheatsheet/" class="md-nav__link">
         
   
   
@@ -670,10 +677,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Kiichain/upgrade.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -684,6 +700,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -720,144 +737,17 @@
 
 
 
-<h1 id="node-installation-guide">🚀 Node Installation Guide</h1>
-<p>This guide helps you set up and run a <strong>Node</strong> for the project.<br />
-🔗 <a href="https://official-website.com">Website</a> | <a href="https://discord.gg/project">Discord</a> | <a href="https://twitter.com/project">Twitter</a></p>
-<hr />
-<h2 id="recommended-specifications">📋 Recommended Specifications</h2>
-<table>
-<thead>
-<tr>
-<th>Component</th>
-<th>Minimum</th>
-<th>Recommended</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CPU</td>
-<td>2 Cores</td>
-<td>4+ Cores</td>
-</tr>
-<tr>
-<td>RAM</td>
-<td>4 GB</td>
-<td>8+ GB</td>
-</tr>
-<tr>
-<td>Storage</td>
-<td>80 GB SSD</td>
-<td>200+ GB NVMe</td>
-</tr>
-<tr>
-<td>OS</td>
-<td>Ubuntu 20.04+</td>
-<td>Ubuntu 22.04</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="install-go-if-you-dont-have-one">Install Go (if you don't have one)</h2>
-<pre><code class="language-bash">cd $HOME
-VER=&quot;1.23.8&quot;
-wget &quot;https://golang.org/dl/go$VER.linux-amd64.tar.gz&quot;
-sudo rm -rf /usr/local/go
-sudo tar -C /usr/local -xzf &quot;go$VER.linux-amd64.tar.gz&quot;
-rm &quot;go$VER.linux-amd64.tar.gz&quot;
+<h1 id="upgrade-chaina-testnet">⚡ Upgrade - ChainA (Testnet)</h1>
+<p>Panduan melakukan upgrade untuk <strong>ChainA Testnet</strong>.</p>
+<pre><code class="language-bash"># stop service
+sudo systemctl stop chainad
 
-[ ! -f ~/.bash_profile ] &amp;&amp; touch ~/.bash_profile
-echo &quot;export PATH=$PATH:/usr/local/go/bin:~/go/bin&quot; &gt;&gt; ~/.bash_profile
-source $HOME/.bash_profile
-[ ! -d ~/go/bin ] &amp;&amp; mkdir -p ~/go/bin
-</code></pre>
-<hr />
-<h2 id="set-environment-variables">Set Environment Variables</h2>
-<pre><code class="language-bash">echo &quot;export WALLET=&lt;YOUR_WALLET&gt;&quot; &gt;&gt; $HOME/.bash_profile
-echo &quot;export MONIKER=&lt;YOUR_MONIKER&gt;&quot; &gt;&gt; $HOME/.bash_profile
-echo &quot;export APP_CHAIN_ID=&lt;CHAIN_ID&gt;&quot; &gt;&gt; $HOME/.bash_profile
-echo &quot;export APP_PORT=&lt;CUSTOM_PORT&gt;&quot; &gt;&gt; $HOME/.bash_profile
-source $HOME/.bash_profile
-</code></pre>
-<hr />
-<h2 id="download-binary">Download Binary</h2>
-<pre><code class="language-bash">cd $HOME
-wget -O $APPD.zip &lt;BINARY_URL&gt;
-unzip $APPD.zip
-rm $APPD.zip
-chmod +x $HOME/$APPD
-sudo mv $HOME/$APPD $HOME/go/bin/
-</code></pre>
-<hr />
-<h2 id="init-config">Init &amp; Config</h2>
-<pre><code class="language-bash">$APPD init $MONIKER --chain-id $APP_CHAIN_ID
-$APPD config set client chain-id $APP_CHAIN_ID
-$APPD config set client node tcp://localhost:${APP_PORT}657
-</code></pre>
-<hr />
-<h2 id="download-genesis-addrbook">Download Genesis &amp; Addrbook</h2>
-<pre><code class="language-bash">wget -O $APP_HOME/config/genesis.json &lt;GENESIS_URL&gt;
-wget -O $APP_HOME/config/addrbook.json &lt;ADDRBOOK_URL&gt;
-</code></pre>
-<hr />
-<h2 id="set-seeds-peers">Set Seeds &amp; Peers</h2>
-<pre><code class="language-bash">SEEDS=&quot;&lt;SEED_NODE&gt;&quot;
-PEERS=&quot;&lt;PEER_NODE1&gt;,&lt;PEER_NODE2&gt;&quot;
-sed -i -e &quot;s/^seeds *=.*/seeds = \&quot;$SEEDS\&quot;/&quot; $APP_HOME/config/config.toml
-sed -i -e &quot;s/^persistent_peers *=.*/persistent_peers = \&quot;$PEERS\&quot;/&quot; $APP_HOME/config/config.toml
-</code></pre>
-<hr />
-<h2 id="custom-ports">Custom Ports</h2>
-<pre><code class="language-bash"># app.toml
-sed -i.bak -e &quot;s%:1317%:${APP_PORT}317%g;
-s%:8080%:${APP_PORT}080%g;
-s%:9090%:${APP_PORT}090%g;
-s%:9091%:${APP_PORT}091%g;
-s%:8545%:${APP_PORT}545%g;
-s%:8546%:${APP_PORT}546%g;
-s%:6065%:${APP_PORT}065%g&quot; $APP_HOME/config/app.toml
+# download versi baru
+wget https://example.com/chainad-v2 -O /usr/local/bin/chainad
+chmod +x /usr/local/bin/chainad
 
-# config.toml
-sed -i.bak -e &quot;s%:26658%:${APP_PORT}658%g;
-s%:26657%:${APP_PORT}657%g;
-s%:6060%:${APP_PORT}060%g;
-s%:26656%:${APP_PORT}656%g;
-s%^external_address = \&quot;\&quot;%external_address = \&quot;$(wget -qO- eth0.me):${APP_PORT}656\&quot;%;
-s%:26660%:${APP_PORT}660%g&quot; $APP_HOME/config/config.toml
-</code></pre>
-<hr />
-<h2 id="pruning">Pruning</h2>
-<pre><code class="language-bash">sed -i -e &quot;s/^pruning *=.*/pruning = \&quot;custom\&quot;/&quot; $APP_HOME/config/app.toml 
-sed -i -e &quot;s/^pruning-keep-recent *=.*/pruning-keep-recent = \&quot;100\&quot;/&quot; $APP_HOME/config/app.toml
-sed -i -e &quot;s/^pruning-interval *=.*/pruning-interval = \&quot;10\&quot;/&quot; $APP_HOME/config/app.toml
-</code></pre>
-<hr />
-<h2 id="min-gas-prometheus-indexer">Min Gas, Prometheus, Indexer</h2>
-<pre><code class="language-bash">sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = &quot;&lt;MIN_GAS_PRICE&gt;&quot;|g' $APP_HOME/config/app.toml
-sed -i -e &quot;s/prometheus = false/prometheus = true/&quot; $APP_HOME/config/config.toml
-sed -i -e &quot;s/^indexer *=.*/indexer = \&quot;null\&quot;/&quot; $APP_HOME/config/config.toml
-</code></pre>
-<hr />
-<h2 id="create-service-file">Create Service File</h2>
-<pre><code class="language-bash">sudo tee /etc/systemd/system/$APPD.service &gt; /dev/null &lt;&lt;EOF
-[Unit]
-Description=$APPD Node
-After=network-online.target
-[Service]
-User=$USER
-WorkingDirectory=$APP_HOME
-ExecStart=$(which $APPD) start --home $APP_HOME
-Restart=on-failure
-RestartSec=5
-LimitNOFILE=65535
-[Install]
-WantedBy=multi-user.target
-EOF
-</code></pre>
-<hr />
-<h2 id="start-service">Start Service</h2>
-<pre><code class="language-bash">sudo systemctl daemon-reload
-sudo systemctl enable $APPD
-sudo systemctl restart $APPD &amp;&amp; sudo journalctl -u $APPD -fo cat
+# restart service
+sudo systemctl start chainad
 </code></pre>
 
 
@@ -883,6 +773,28 @@ sudo systemctl restart $APPD &amp;&amp; sudo journalctl -u $APPD -fo cat
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../cheatsheet/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Cheat Sheet">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H109.3l105.4-105.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Cheat Sheet
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
