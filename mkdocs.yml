@@ -1,13 +1,53 @@
-site_name: KyroNode Docs
-site_url: https://kyronode.github.io/docs
+site_name: Kyronode Services
+site_url: https://services.kyronode.xyz
 theme:
+  pallete:
+    - primary: orange
+    - accent: yellow
+    - media : "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to system preferences
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
+  icon:
+    previous: fontawesome/solid/arrow-left
+    next: fontawesome/solid/arrow-right
+
   name: material
   features:
     - navigation.tabs
     - navigation.expand
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.footer
+    - toc.integrate
     - content.code.copy
     - search.suggest
     - search.highlight
+
+extra:
+  homepage: https://kyronode.xyz
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/kyronode
+    - icon: fontawesome/brands/twitter
+      link: https://x.com/kyronode
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/kyronode
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:kyronodes@gmail.com
 
 nav:
   - Home: index.md
@@ -20,7 +60,7 @@ nav:
           - Upgrade: mainnet/chain1/upgrade.md
   - Testnet:
       - Overview: testnet/_index.md
-      - ChainA:
-          - Installation: testnet/chainA/installation.md
-          - Cheat Sheet: testnet/chainA/cheatsheet.md
-          - Upgrade: testnet/chainA/upgrade.md
+      - Kiichain:
+          - Installation: testnet/Kiichain/installation.md
+          - Cheat Sheet: testnet/Kiichain/cheatsheet.md
+          - Upgrade: testnet/Kiichain/upgrade.md
