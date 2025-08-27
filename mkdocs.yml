@@ -20,10 +20,8 @@ theme:
     - search.suggest
     - search.highlight
   palette:
-    # Mode otomatis mengikuti sistem
+    # Mode otomatis ikut preferensi sistem
     - media: "(prefers-color-scheme)"
-      primary: orange
-      accent: yellow
       toggle:
         icon: material/brightness-auto
         name: Switch to system preference
