@@ -1,6 +1,10 @@
-# 👋 Welcome to KyroNode Docs
+# Let’s build with Kyronode
 
-Selamat datang di dokumentasi resmi **KyroNode**.  
-Kami menyediakan panduan instalasi, cheat sheet, dan upgrade untuk berbagai mainnet & testnet chain.
+Kyronode provides reliable validator and infrastructure services for blockchain networks.  
+Secure. Scalable. Always online.
 
-Silakan pilih menu di navigasi untuk mulai. 🚀
+<div class="hero-buttons">
+  <a class="md-button md-raised md-primary" href="https://services.kyronode.xyz/mainnet/_index/">Get Started</a>
+  <a class="md-button md-outline" href="https://services.kyronode.xyz/about/">Learn More</a>
+</div>
+
