@@ -19,25 +19,30 @@ theme:
     - content.code.copy
     - search.suggest
     - search.highlight
+
   palette:
-    # Mode otomatis ikut preferensi sistem
+    # Automatic: adapt to user's OS preference
     - media: "(prefers-color-scheme)"
       toggle:
         icon: material/brightness-auto
         name: Switch to system preference
-    # Mode terang (light)
-    - scheme: default
+
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: orange
       accent: yellow
       toggle:
-        icon: material/weather-night
+        icon: material/brightness-7
         name: Switch to dark mode
-    # Mode gelap (dark)
-    - scheme: slate
+
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: orange
       accent: yellow
       toggle:
-        icon: material/weather-sunny
+        icon: material/brightness-4
         name: Switch to light mode
 
 extra:
@@ -67,4 +72,5 @@ nav:
           - Installation: testnet/Kiichain/installation.md
           - Cheat Sheet: testnet/Kiichain/cheatsheet.md
           - Upgrade: testnet/Kiichain/upgrade.md
+
 copyright: Copyright &copy; 2022-2025 KyroNode. All rights reserved.
