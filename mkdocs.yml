@@ -1,30 +1,13 @@
 site_name: Kyronode Services
 site_url: https://services.kyronode.xyz
+
 theme:
-  pallete:
-    - primary: orange
-    - accent: yellow
-    - media : "(prefers-color-scheme)"
-      toggle:
-        icon: material/brightness-auto
-        name: Switch to light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to system preferences
+  name: material
   logo: assets/logo.png
   favicon: assets/favicon.ico
   icon:
     previous: fontawesome/solid/arrow-left
     next: fontawesome/solid/arrow-right
-
-  name: material
   features:
     - navigation.tabs
     - navigation.expand
@@ -36,6 +19,28 @@ theme:
     - content.code.copy
     - search.suggest
     - search.highlight
+  palette:
+    # Mode otomatis mengikuti sistem
+    - media: "(prefers-color-scheme)"
+      primary: orange
+      accent: yellow
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to system preference
+    # Mode terang (light)
+    - scheme: default
+      primary: orange
+      accent: yellow
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    # Mode gelap (dark)
+    - scheme: slate
+      primary: orange
+      accent: yellow
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
 
 extra:
   homepage: https://kyronode.xyz
