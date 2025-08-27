@@ -23,7 +23,14 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install mkdocs==1.* mkdocs-material==9.* 
+          pip install --upgrade pip
+          pip install mkdocs==1.* mkdocs-material==9.6.18
+
+      - name: Check versions
+        run: |
+          echo "=== MkDocs Version ==="
+          mkdocs --version
+          pip show mkdocs-material | grep Version
 
       - name: Build MkDocs
         run: |
