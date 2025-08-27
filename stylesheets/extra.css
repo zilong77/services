@@ -1,34 +1,58 @@
-/* docs/stylesheets/extra.css */
+/* =========================
+   HERO FULLSCREEN HOME
+   ========================= */
 
-/* Full screen hero section untuk Home */
-.md-main__inner {
-  min-height: 100vh;
+/* Hanya untuk homepage */
+body.index-page .md-main__inner {
+  min-height: 100vh;                 /* full viewport height */
   display: flex;
-  align-items: flex-end; /* tulisan di bawah */
-  justify-content: flex-start; /* kiri */
+  align-items: flex-end;             /* tulisan di bawah */
+  justify-content: flex-start;       /* kiri */
   padding: 2rem;
-  background-image: url('../assets/hero-background.png'); /* ganti path gambar */
-  background-size: cover;
-  background-position: center;
+  background-image: url('../assets/hero-background.png'); /* path relatif */
+  background-size: cover;            /* fill area, proporsional */
+  background-position: center center;
+  background-repeat: no-repeat;
   color: white;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+  box-sizing: border-box;
 }
 
 /* Tombol di hero */
-.hero-buttons {
+body.index-page .hero-buttons {
   margin-top: 1rem;
 }
 
-.hero-buttons a {
+body.index-page .hero-buttons a {
   margin-right: 1rem;
 }
 
-/* Hide header/nav bar di halaman index (Home) */
-body.md-typeset.index-page .md-header {
+/* =========================
+   HIDE HEADER ONLY ON HOME
+   ========================= */
+body.index-page .md-header {
   display: none;
+  box-shadow: none;
+  border-bottom: none;
 }
 
-/* Optional: hapus margin top main content supaya hero fullscreen */
-body.md-typeset.index-page .md-main {
+/* Remove extra margin from main content on homepage */
+body.index-page .md-main {
   margin-top: 0;
+  padding-top: 0;
+}
+
+/* =========================
+   RESPONSIVE FOR MOBILE
+   ========================= */
+@media (max-width: 768px) {
+  body.index-page .md-main__inner {
+    padding: 1rem;
+    align-items: flex-end; /* tetap di bawah */
+  }
+
+  body.index-page .hero-buttons a {
+    display: block;
+    margin: 0.5rem 0;
+  }
 }
