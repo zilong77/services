@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://kyronode.github.io/docs/</loc>
+         <loc>https://services.kyronode.xyz/</loc>
          <lastmod>2025-08-27</lastmod>
     </url>
     <url>
-         <loc>https://kyronode.github.io/docs/about/</loc>
+         <loc>https://services.kyronode.xyz/about/</loc>
          <lastmod>2025-08-27</lastmod>
     </url>
     <url>
-         <loc>https://kyronode.github.io/docs/mainnet/_index/</loc>
+         <loc>https://services.kyronode.xyz/mainnet/_index/</loc>
          <lastmod>2025-08-27</lastmod>
     </url>
     <url>
-         <loc>https://kyronode.github.io/docs/mainnet/chain1/cheatsheet/</loc>
+         <loc>https://services.kyronode.xyz/mainnet/chain1/cheatsheet/</loc>
          <lastmod>2025-08-27</lastmod>
     </url>
     <url>
-         <loc>https://kyronode.github.io/docs/mainnet/chain1/installation/</loc>
+         <loc>https://services.kyronode.xyz/mainnet/chain1/installation/</loc>
          <lastmod>2025-08-27</lastmod>
     </url>
     <url>
-         <loc>https://kyronode.github.io/docs/mainnet/chain1/upgrade/</loc>
+         <loc>https://services.kyronode.xyz/mainnet/chain1/upgrade/</loc>
          <lastmod>2025-08-27</lastmod>
     </url>
     <url>
-         <loc>https://kyronode.github.io/docs/testnet/_index/</loc>
+         <loc>https://services.kyronode.xyz/testnet/_index/</loc>
          <lastmod>2025-08-27</lastmod>
     </url>
     <url>
-         <loc>https://kyronode.github.io/docs/testnet/chainA/cheatsheet/</loc>
+         <loc>https://services.kyronode.xyz/testnet/chainA/cheatsheet/</loc>
          <lastmod>2025-08-27</lastmod>
     </url>
     <url>
-         <loc>https://kyronode.github.io/docs/testnet/chainA/installation/</loc>
+         <loc>https://services.kyronode.xyz/testnet/chainA/installation/</loc>
          <lastmod>2025-08-27</lastmod>
     </url>
     <url>
-         <loc>https://kyronode.github.io/docs/testnet/chainA/upgrade/</loc>
+         <loc>https://services.kyronode.xyz/testnet/chainA/upgrade/</loc>
          <lastmod>2025-08-27</lastmod>
     </url>
 </urlset>
