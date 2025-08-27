@@ -72,8 +72,5 @@ nav:
           - Installation: testnet/Kiichain/installation.md
           - Cheat Sheet: testnet/Kiichain/cheatsheet.md
           - Upgrade: testnet/Kiichain/upgrade.md
-          
-extra_css:
-  - stylesheets/extra.css
 
 copyright: Copyright &copy; 2022-2025 KyroNode. All rights reserved.
