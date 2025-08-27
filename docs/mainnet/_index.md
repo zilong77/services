@@ -1,6 +1,8 @@
 # 🌐 Mainnet Chains
 
-Daftar dokumentasi untuk semua chain **mainnet** yang didukung oleh KyroNode.
+Kyronode makes it easier to test, validate, and explore.
+Discover the networks we support and start building today.
 
-## 📌 Daftar
-- [Chain1](chain1/installation.md)
+## 📌 Our Supported Networks
+- [Zenrock](Zenrock/installation.md)
+- [Bitbadges](Bitbadges/installation.md)
