@@ -59,18 +59,43 @@ extra:
 
 nav:
   - Home: index.md
-  - About KyroNode: about.md
   - Mainnet:
       - Overview: mainnet/_index.md
-      - Chain1:
-          - Installation: mainnet/chain1/installation.md
-          - Cheat Sheet: mainnet/chain1/cheatsheet.md
-          - Upgrade: mainnet/chain1/upgrade.md
+      - Bitbadges:
+          - Installation: mainnet/Bitbadges/installation.md
+          - Cheat Sheet: mainnet/Bitbadges/cheatsheet.md
+          - Upgrade: mainnet/Bitbadges/upgrade.md
+      - Bitbadges:
+          - Installation: mainnet/Zenrock/installation.md
+          - Cheat Sheet: mainnet/Zenrock/cheatsheet.md
+          - Upgrade: mainnet/Zenrock/upgrade.md
   - Testnet:
       - Overview: testnet/_index.md
       - Kiichain:
           - Installation: testnet/Kiichain/installation.md
           - Cheat Sheet: testnet/Kiichain/cheatsheet.md
           - Upgrade: testnet/Kiichain/upgrade.md
+      - Lumera:
+          - Installation: testnet/Lumera/installation.md
+          - Cheat Sheet: testnet/Lumera/cheatsheet.md
+          - Upgrade: testnet/Lumera/upgrade.md
+      - Safrochain:
+          - Installation: testnet/Safrochain/installation.md
+          - Cheat Sheet: testnet/Safrochain/cheatsheet.md
+          - Upgrade: testnet/Safrochain/upgrade.md
+      - Dill:
+          - Installation: testnet/Dill/installation.md
+      - Union:
+          - Installation: testnet/Union/installation.md
+          - Cheat Sheet: testnet/Union/cheatsheet.md
+          - Upgrade: testnet/Union/upgrade.md
+      - Warden:
+          - Installation: testnet/Warden/installation.md
+          - Cheat Sheet: testnet/Warden/cheatsheet.md
+          - Upgrade: testnet/Warden/upgrade.md
+      - Zenrock:
+          - Installation: testnet/Zenrock/installation.md
+          - Cheat Sheet: testnet/Zenrock/cheatsheet.md
+          - Upgrade: testnet/Zenrock/upgrade.md
 
-copyright: Copyright &copy; 2022-2025 KyroNode. All rights reserved.
+copyright: Copyright &copy; 2025 KyroNode. All rights reserved.
