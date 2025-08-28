@@ -155,15 +155,27 @@ sudo systemctl restart kiichaind && sudo journalctl -u kiichaind -fo cat
 
 ## Node Synchronize Checker
 ```bash
-#Paste this to your terminal
+# Paste this to your terminal
 bash <(curl -s https://raw.githubusercontent.com/kyronode/Testnet/main/kiichain-sync.sh)
+```
+
+---
+
+## Create or Restore Wallet
+`Create new wallet and save ur mnemonics securely`
+```bash
+kiichaind keys add $WALLET
+```
+`If u want to restore use this command`
+```bash
+kiichaind keys add $WALLET --recover
 ```
 
 ---
 
 ## Create Validator
 If ur node has been fully synchronized, then u can create ur validator:
-`Please Change <YOUR_MONIKER><YOUR_IDENTITY><YOUR_WEBSITE><YOUR_DETAILS> with ur own`
+`Please Change <YOUR_MONIKER><YOUR_IDENTITY><YOUR_WEBSITE><YOUR_DETAILS> with ur own.`
 ```bash
 cd $HOME
 echo "{
@@ -193,7 +205,7 @@ kiichaind tx staking create-validator validator.json \
 ---
 
 ## Delete Node
-`Please backup ur wallet and important file like "priv_validator_key.json" before deleting` 
+`Please backup ur wallet and important file like "priv_validator_key.json" before deleting.` 
 ```bash
 sudo systemctl stop kiichaind
 sudo systemctl disable kiichaind
