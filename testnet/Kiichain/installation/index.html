@@ -928,6 +928,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#create-or-restore-wallet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create or Restore Wallet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#create-validator" class="md-nav__link">
     <span class="md-ellipsis">
       Create Validator
@@ -1847,13 +1856,21 @@ sudo systemctl restart kiichaind &amp;&amp; sudo journalctl -u kiichaind -fo cat
 </code></pre>
 <hr />
 <h2 id="node-synchronize-checker">Node Synchronize Checker</h2>
-<pre><code class="language-bash">#Paste this to your terminal
+<pre><code class="language-bash"># Paste this to your terminal
 bash &lt;(curl -s https://raw.githubusercontent.com/kyronode/Testnet/main/kiichain-sync.sh)
+</code></pre>
+<hr />
+<h2 id="create-or-restore-wallet">Create or Restore Wallet</h2>
+<p><code>Create new wallet and save ur mnemonics securely</code></p>
+<pre><code class="language-bash">kiichaind keys add $WALLET
+</code></pre>
+<p><code>If u want to restore use this command</code></p>
+<pre><code class="language-bash">kiichaind keys add $WALLET --recover
 </code></pre>
 <hr />
 <h2 id="create-validator">Create Validator</h2>
 <p>If ur node has been fully synchronized, then u can create ur validator:
-<code>Please Change &lt;YOUR_MONIKER&gt;&lt;YOUR_IDENTITY&gt;&lt;YOUR_WEBSITE&gt;&lt;YOUR_DETAILS&gt; with ur own</code></p>
+<code>Please Change &lt;YOUR_MONIKER&gt;&lt;YOUR_IDENTITY&gt;&lt;YOUR_WEBSITE&gt;&lt;YOUR_DETAILS&gt; with ur own.</code></p>
 <pre><code class="language-bash">cd $HOME
 echo &quot;{
   \&quot;pubkey\&quot;: {\&quot;@type\&quot;: \&quot;/cosmos.crypto.ed25519.PubKey\&quot;, \&quot;key\&quot;: \&quot;$(kiichaind tendermint show-validator | grep -Po '\&quot;key\&quot;:\s*\&quot;\K[^\&quot;]*')\&quot;},
@@ -1880,7 +1897,7 @@ kiichaind tx staking create-validator validator.json \
 </code></pre>
 <hr />
 <h2 id="delete-node">Delete Node</h2>
-<p><code>Please backup ur wallet and important file like "priv_validator_key.json" before deleting</code> </p>
+<p><code>Please backup ur wallet and important file like "priv_validator_key.json" before deleting.</code> </p>
 <pre><code class="language-bash">sudo systemctl stop kiichaind
 sudo systemctl disable kiichaind
 sudo systemctl daemon-reload
