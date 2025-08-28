@@ -150,3 +150,55 @@ sudo systemctl daemon-reload
 sudo systemctl enable kiichaind
 sudo systemctl restart kiichaind && sudo journalctl -u kiichaind -fo cat
 ```
+
+---
+
+## Node Synchronize Checker
+```bash
+#Paste this to your terminal
+bash <(curl -s https://raw.githubusercontent.com/kyronode/Testnet/main/kiichain-sync.sh)
+```
+
+---
+
+## Create Validator
+If ur node has been fully synchronized, then u can create ur validator:
+`Please Change <YOUR_MONIKER><YOUR_IDENTITY><YOUR_WEBSITE><YOUR_DETAILS> with ur own`
+```bash
+cd $HOME
+echo "{
+  \"pubkey\": {\"@type\": \"/cosmos.crypto.ed25519.PubKey\", \"key\": \"$(kiichaind tendermint show-validator | grep -Po '\"key\":\s*\"\K[^\"]*')\"},
+  \"amount\": \"1000000000000000000akii\",
+  \"moniker\": \"<YOUR_MONIKER>\",
+  \"identity\": \"<YOUR_IDENTITY>\",
+  \"website\": \"<YOUR_WEBSITE>\",
+  \"security\": \"\",
+  \"details\": \"<YOUR_DETAILS>\",
+  \"commission-rate\": \"0.05\",
+  \"commission-max-rate\": \"0.25\",
+  \"commission-max-change-rate\": \"0.01\",
+  \"min-self-delegation\": \"1\"
+}" > validator.json
+
+# Create a validator using the JSON configuration
+kiichaind tx staking create-validator validator.json \
+    --from wallet \
+    --chain-id oro_1336-1 \
+    --gas-prices 1250000000akii \
+    --gas-adjustment 1.3 \
+    --gas auto \
+    -y
+```
+
+---
+
+## Delete Node
+`Please backup ur wallet and important file like "priv_validator_key.json" before deleting` 
+```bash
+sudo systemctl stop kiichaind
+sudo systemctl disable kiichaind
+sudo systemctl daemon-reload
+sudo rm -rf /etc/systemd/system/kiichaind.service
+sudo rm $(which kiichaind)
+sudo rm -rf $HOME/.kiichain
+```

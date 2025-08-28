@@ -161,7 +161,7 @@ kiichaind q slashing params
 
 ### Unjail validator
 ```bash
-kiichaind tx slashing unjail --from $WALLET --chain-id oro_1336-1 --fees xxxxxxxx -y
+kiichaind tx slashing unjail --from $WALLET --chain-id oro_1336-1 --fees 1250000000akii -y
 ```
 
 ### Active Validators List
@@ -177,6 +177,19 @@ kiichaind q staking validators -oj --limit=2000 | jq '.validators[] | select(.st
 ### Signing info
 ```bash
 kiichaind q slashing signing-info $(kiichaind tendermint show-validator)
+```
+
+### Edit Validator
+```bash
+kiichaind tx staking edit-validator \
+--commission-rate 0.05 \
+--new-moniker "$MONIKER" \
+--identity "" \
+--details "Kyronode for all" \
+--from $WALLET \
+--chain-id oro_1336-1 \
+--fees 1250000000akii \
+-y
 ```
 
 ---
