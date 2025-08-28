@@ -1185,6 +1185,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#edit-validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit Validator
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2065,7 +2074,7 @@
 <pre><code class="language-bash">kiichaind q slashing params
 </code></pre>
 <h3 id="unjail-validator">Unjail validator</h3>
-<pre><code class="language-bash">kiichaind tx slashing unjail --from $WALLET --chain-id oro_1336-1 --fees xxxxxxxx -y
+<pre><code class="language-bash">kiichaind tx slashing unjail --from $WALLET --chain-id oro_1336-1 --fees 1250000000akii -y
 </code></pre>
 <h3 id="active-validators-list">Active Validators List</h3>
 <pre><code class="language-bash">kiichaind q staking validators -oj --limit=2000 | jq '.validators[] | select(.status==&quot;BOND_STATUS_BONDED&quot;)' | jq -r '(.tokens|tonumber/pow(10;6)|floor|tostring) + &quot; &quot; + .description.moniker' | sort -gr | nl
@@ -2075,6 +2084,17 @@
 </code></pre>
 <h3 id="signing-info">Signing info</h3>
 <pre><code class="language-bash">kiichaind q slashing signing-info $(kiichaind tendermint show-validator)
+</code></pre>
+<h3 id="edit-validator">Edit Validator</h3>
+<pre><code class="language-bash">kiichaind tx staking edit-validator \
+--commission-rate 0.05 \
+--new-moniker &quot;$MONIKER&quot; \
+--identity &quot;&quot; \
+--details &quot;Kyronode for all&quot; \
+--from $WALLET \
+--chain-id oro_1336-1 \
+--fees 1250000000akii \
+-y
 </code></pre>
 <hr />
 <h2 id="governance">🏛 Governance</h2>
