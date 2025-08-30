@@ -2,26 +2,94 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://services.kyronode.xyz/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-08-30</lastmod>
     </url>
     <url>
          <loc>https://services.kyronode.xyz/mainnet/_index/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-08-30</lastmod>
+    </url>
+    <url>
+         <loc>https://services.kyronode.xyz/mainnet/Bitbadges/cheatsheet/</loc>
+         <lastmod>2025-08-30</lastmod>
+    </url>
+    <url>
+         <loc>https://services.kyronode.xyz/mainnet/Bitbadges/installation/</loc>
+         <lastmod>2025-08-30</lastmod>
+    </url>
+    <url>
+         <loc>https://services.kyronode.xyz/mainnet/Bitbadges/network/</loc>
+         <lastmod>2025-08-30</lastmod>
+    </url>
+    <url>
+         <loc>https://services.kyronode.xyz/mainnet/Bitbadges/upgrade/</loc>
+         <lastmod>2025-08-30</lastmod>
+    </url>
+    <url>
+         <loc>https://services.kyronode.xyz/mainnet/Zenrock/cheatsheet/</loc>
+         <lastmod>2025-08-30</lastmod>
+    </url>
+    <url>
+         <loc>https://services.kyronode.xyz/mainnet/Zenrock/installation/</loc>
+         <lastmod>2025-08-30</lastmod>
+    </url>
+    <url>
+         <loc>https://services.kyronode.xyz/mainnet/Zenrock/network/</loc>
+         <lastmod>2025-08-30</lastmod>
+    </url>
+    <url>
+         <loc>https://services.kyronode.xyz/mainnet/Zenrock/upgrade/</loc>
+         <lastmod>2025-08-30</lastmod>
     </url>
     <url>
          <loc>https://services.kyronode.xyz/testnet/_index/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-08-30</lastmod>
     </url>
     <url>
          <loc>https://services.kyronode.xyz/testnet/Kiichain/cheatsheet/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-08-30</lastmod>
     </url>
     <url>
          <loc>https://services.kyronode.xyz/testnet/Kiichain/installation/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-08-30</lastmod>
+    </url>
+    <url>
+         <loc>https://services.kyronode.xyz/testnet/Kiichain/network/</loc>
+         <lastmod>2025-08-30</lastmod>
     </url>
     <url>
          <loc>https://services.kyronode.xyz/testnet/Kiichain/upgrade/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-08-30</lastmod>
+    </url>
+    <url>
+         <loc>https://services.kyronode.xyz/testnet/Lumera/cheatsheet/</loc>
+         <lastmod>2025-08-30</lastmod>
+    </url>
+    <url>
+         <loc>https://services.kyronode.xyz/testnet/Lumera/installation/</loc>
+         <lastmod>2025-08-30</lastmod>
+    </url>
+    <url>
+         <loc>https://services.kyronode.xyz/testnet/Lumera/network/</loc>
+         <lastmod>2025-08-30</lastmod>
+    </url>
+    <url>
+         <loc>https://services.kyronode.xyz/testnet/Lumera/upgrade/</loc>
+         <lastmod>2025-08-30</lastmod>
+    </url>
+    <url>
+         <loc>https://services.kyronode.xyz/testnet/Safrochain/cheatsheet/</loc>
+         <lastmod>2025-08-30</lastmod>
+    </url>
+    <url>
+         <loc>https://services.kyronode.xyz/testnet/Safrochain/installation/</loc>
+         <lastmod>2025-08-30</lastmod>
+    </url>
+    <url>
+         <loc>https://services.kyronode.xyz/testnet/Safrochain/network/</loc>
+         <lastmod>2025-08-30</lastmod>
+    </url>
+    <url>
+         <loc>https://services.kyronode.xyz/testnet/Safrochain/upgrade/</loc>
+         <lastmod>2025-08-30</lastmod>
     </url>
 </urlset>
