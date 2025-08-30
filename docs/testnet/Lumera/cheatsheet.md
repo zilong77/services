@@ -1,4 +1,4 @@
-# 📑 Kiichain Cheat Sheet
+# 📑 Lumera Cheat Sheet
 
 ## 🔧 Service Operations
 
@@ -97,7 +97,7 @@ lumerad keys import $WALLET wallet.backup
 
 ### Withdraw all rewards
 ```bash
-lumerad tx distribution withdraw-all-rewards --from $WALLET --chain-id lumera-testnet-2 --fees --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
+lumerad tx distribution withdraw-all-rewards --from $WALLET --chain-id lumera-testnet-2 --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
 ```
 
 ### Withdraw rewards and commission from your validator
@@ -112,27 +112,27 @@ lumerad query bank balances $WALLET_ADDRESS
 
 ### Delegate to Yourself
 ```bash
-lumerad tx staking delegate $(lumerad keys show $WALLET --bech val -a) 1000000000akii --from $WALLET --chain-id lumera-testnet-2 --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
+lumerad tx staking delegate $(lumerad keys show $WALLET --bech val -a) 1000000ulume --from $WALLET --chain-id lumera-testnet-2 --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
 ```
 
 ### Delegate
 ```bash
-lumerad tx staking delegate <TO_VALOPER_ADDRESS> 1000000000akii --from $WALLET --chain-id lumera-testnet-2 --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
+lumerad tx staking delegate <TO_VALOPER_ADDRESS> 1000000ulume --from $WALLET --chain-id lumera-testnet-2 --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
 ```
 
 ### Redelegate Stake to Another Validator
 ```bash
-lumerad tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000000akii --from $WALLET --chain-id lumera-testnet-2 --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
+lumerad tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000ulume --from $WALLET --chain-id lumera-testnet-2 --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
 ```
 
 ### Unbond
 ```bash
-lumerad tx staking unbond $(lumerad keys show $WALLET --bech val -a) 1000000000akii --from $WALLET --chain-id lumera-testnet-2 --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
+lumerad tx staking unbond $(lumerad keys show $WALLET --bech val -a) 1000000ulume --from $WALLET --chain-id lumera-testnet-2 --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
 ```
 
 ### Transfer Funds
 ```bash
-lumerad tx bank send $WALLET_ADDRESS <TO_WALLET_ADDRESS> 1000000000akii --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
+lumerad tx bank send $WALLET_ADDRESS <TO_WALLET_ADDRESS> 1000000ulume --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
 ```
 
 ---
@@ -188,7 +188,9 @@ lumerad tx staking edit-validator \
 --details "Kyronode for all" \
 --from $WALLET \
 --chain-id lumera-testnet-2 \
---fees 1250000000akii \
+--fees 0.025ulume \
+--gas-adjustment 1.3 \
+--gas auto \
 -y
 ```
 

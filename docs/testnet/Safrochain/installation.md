@@ -1,7 +1,7 @@
-# 🚀 Node Installation Guide
+# 🚀 Safrochain Installation Guide
 
-This guide helps you set up and run a Kiichain Node.  
-🔗 [Website](https://www.kiiglobal.io/) | [Discord](https://discord.gg/4wNJRqR9) | [Twitter](https://x.com/KiiChainio)
+This guide helps you set up and run a Safrochain Node.  
+🔗 [Website](https://safrochain.com/) | [Discord](https://discord.gg/3Q3w3mqvXU) | [Twitter](https://x.com/safrochain)
 
 ---
 
@@ -76,8 +76,8 @@ wget -O $HOME/.safrochain/config/addrbook.json https://github.com/kyronode/all-a
 
 ## Set Seeds & Peers
 ```bash
-SEEDS="408ede05d42c077c7e6f069e9dede07074f40911@94.130.143.184:19656"
-PEERS="5b6aa55124c0fd28e47d7da091a69973964a9fe1@uno.sentry.testnet.v3.kiivalidator.com:26656,5e6b283c8879e8d1b0866bda20949f9886aff967@dos.sentry.testnet.v3.kiivalidator.com:26656"
+SEEDS="2242a526e7841e7e8a551aabc4614e6cd612e7fb@88.99.211.113:26656,642dfd491b8bfc0b842c71c01a12ee1122f3dafe@46.62.140.103:26656"
+PEERS="9df9e898213296e0180bdad54c30cb5f3c424a42@78.46.215.249:26656,1ac9964262094380ab20278979de72280d7bfc59@152.53.182.15:21656,642dfd491b8bfc0b842c71c01a12ee1122f3dafe@46.62.140.103:26656,693c44c8fdeea31ceadf43f98d73fdf317bd70b8@62.169.16.57:21656,88fb1dd0ed4e81389215ce663a7219d0ce54cf59@161.97.101.168:26656,d001827cf6adb1b6b63284189127e5d844173889@143.198.91.87:26656,b4b711560e62b3a850193f3fa85c82e6ccf4c013@135.181.178.120:12656,525aed9c85f89d9a70c0f2048b1b0e7695c3d03a@37.60.252.195:21656,637077d431f618181597706810a65c826524fd74@176.9.120.85:32756"
 sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/" $HOME/.safrochain/config/config.toml
 sed -i -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.safrochain/config/config.toml
 ```
@@ -188,7 +188,7 @@ If ur node has been fully synchronized, then u can create ur validator:
 cd $HOME
 echo "{
   \"pubkey\": {\"@type\": \"/cosmos.crypto.ed25519.PubKey\", \"key\": \"$(safrochaind tendermint show-validator | grep -Po '\"key\":\s*\"\K[^\"]*')\"},
-  \"amount\": \"1000000000000000000akii\",
+  \"amount\": \"1000000usaf\",
   \"moniker\": \"<YOUR_MONIKER>\",
   \"identity\": \"<YOUR_IDENTITY>\",
   \"website\": \"<YOUR_WEBSITE>\",
@@ -202,9 +202,9 @@ echo "{
 
 # Create a validator using the JSON configuration
 safrochaind tx staking create-validator validator.json \
-    --from wallet \
-    --chain-id oro_1336-1 \
-    --gas-prices 1250000000akii \
+    --from $WALLET \
+    --chain-id safro-testnet-1 \
+    --fees 5000usaf \
     --gas-adjustment 1.3 \
     --gas auto \
     -y

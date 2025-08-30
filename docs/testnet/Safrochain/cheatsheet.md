@@ -97,12 +97,12 @@ safrochaind keys import $WALLET wallet.backup
 
 ### Withdraw all rewards
 ```bash
-safrochaind tx distribution withdraw-all-rewards --from $WALLET --chain-id oro_1336-1 --fees 1250000000akii
+safrochaind tx distribution withdraw-all-rewards --from $WALLET --chain-id safro-testnet-1 --gas auto --gas-adjustment 1.2 --fees 50000usaf -y
 ```
 
 ### Withdraw rewards and commission from your validator
 ```bash
-safrochaind tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id oro_1336-1 --fees 1250000000akii -y
+safrochaind tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission  --chain-id safro-testnet-1   --gas auto --gas-adjustment 1.2 --fees 50000usaf -y
 ```
 
 ### Check your balance
@@ -112,27 +112,27 @@ safrochaind query bank balances $WALLET_ADDRESS
 
 ### Delegate to Yourself
 ```bash
-safrochaind tx staking delegate $(safrochaind keys show $WALLET --bech val -a) 1000000000akii --from $WALLET --chain-id oro_1336-1 --fees 1250000000akii -y
+safrochaind tx staking delegate $(safrochaind keys show $WALLET --bech val -a) 1000000usaf --from $WALLET  --chain-id safro-testnet-1   --gas auto --gas-adjustment 1.2 --fees 50000usaf -y
 ```
 
 ### Delegate
 ```bash
-safrochaind tx staking delegate <TO_VALOPER_ADDRESS> 1000000000akii --from $WALLET --chain-id oro_1336-1 --fees 1250000000akii -y
+safrochaind tx staking delegate <TO_VALOPER_ADDRESS> 1000000usaf --from $WALLET --chain-id safro-testnet-1   --gas auto --gas-adjustment 1.2 --fees 50000usaf -y
 ```
 
 ### Redelegate Stake to Another Validator
 ```bash
-safrochaind tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000000akii --from $WALLET --chain-id oro_1336-1 --fees 1250000000akii -y
+safrochaind tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000usaf --from $WALLET  --chain-id safro-testnet-1   --gas auto --gas-adjustment 1.2 --fees 50000usaf -y
 ```
 
 ### Unbond
 ```bash
-safrochaind tx staking unbond $(safrochaind keys show $WALLET --bech val -a) 1000000000akii --from $WALLET --chain-id oro_1336-1 --fees 12500000000akii -y
+safrochaind tx staking unbond $(safrochaind keys show $WALLET --bech val -a) 1000000usaf --from $WALLET --chain-id safro-testnet-1 --gas auto --gas-adjustment 1.2 --fees 50000usaf -y
 ```
 
 ### Transfer Funds
 ```bash
-safrochaind tx bank send $WALLET_ADDRESS <TO_WALLET_ADDRESS> 1000000000akii --fees 1250000000akii -y
+safrochaind tx bank send $WALLET_ADDRESS <TO_WALLET_ADDRESS> 1000000usaf --from $WALLET --chain-id safro-testnet-1   --gas auto --gas-adjustment 1.2 --fees 50000usaf -y
 ```
 
 ---
@@ -161,7 +161,7 @@ safrochaind q slashing params
 
 ### Unjail validator
 ```bash
-safrochaind tx slashing unjail --from $WALLET --chain-id oro_1336-1 --fees 1250000000akii -y
+safrochaind tx slashing unjail --from $WALLET --chain-id safro-testnet-1   --gas auto --gas-adjustment 1.2 --fees 50000usaf   -y
 ```
 
 ### Active Validators List
@@ -186,9 +186,11 @@ safrochaind tx staking edit-validator \
 --new-moniker "$MONIKER" \
 --identity "" \
 --details "Kyronode for all" \
---from $WALLET \
---chain-id oro_1336-1 \
---fees 1250000000akii \
+--from $$WALLET \
+--chain-id safro-testnet-1 \
+--gas auto \
+--gas-adjustment 1.2 \
+--fees 50000usaf \
 -y
 ```
 
@@ -208,5 +210,5 @@ safrochaind query gov proposal 1
 
 ### Vote
 ```bash
-safrochaind tx gov vote 1 yes --from $WALLET --chain-id oro_1336-1 --fees 1250000000akii -y
+safrochaind tx gov vote 1 yes --from $$WALLET --chain-id safro-testnet-1 --gas auto --gas-adjustment 1.2 --fees 50000usaf   -y
 ```
