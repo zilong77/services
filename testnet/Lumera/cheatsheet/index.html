@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kiichain-cheat-sheet" class="md-skip">
+        <a href="#lumera-cheat-sheet" class="md-skip">
           Skip to content
         </a>
       
@@ -1779,7 +1779,7 @@
 
 
 
-<h1 id="kiichain-cheat-sheet">📑 Kiichain Cheat Sheet</h1>
+<h1 id="lumera-cheat-sheet">📑 Lumera Cheat Sheet</h1>
 <h2 id="service-operations">🔧 Service Operations</h2>
 <h3 id="check-logs">Check logs</h3>
 <pre><code class="language-bash">sudo journalctl -u lumerad -fo cat
@@ -1837,7 +1837,7 @@
 <hr />
 <h2 id="tokens">💰 Tokens</h2>
 <h3 id="withdraw-all-rewards">Withdraw all rewards</h3>
-<pre><code class="language-bash">lumerad tx distribution withdraw-all-rewards --from $WALLET --chain-id lumera-testnet-2 --fees --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
+<pre><code class="language-bash">lumerad tx distribution withdraw-all-rewards --from $WALLET --chain-id lumera-testnet-2 --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
 </code></pre>
 <h3 id="withdraw-rewards-and-commission-from-your-validator">Withdraw rewards and commission from your validator</h3>
 <pre><code class="language-bash">lumerad tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id lumera-testnet-2 --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
@@ -1846,19 +1846,19 @@
 <pre><code class="language-bash">lumerad query bank balances $WALLET_ADDRESS
 </code></pre>
 <h3 id="delegate-to-yourself">Delegate to Yourself</h3>
-<pre><code class="language-bash">lumerad tx staking delegate $(lumerad keys show $WALLET --bech val -a) 1000000000akii --from $WALLET --chain-id lumera-testnet-2 --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
+<pre><code class="language-bash">lumerad tx staking delegate $(lumerad keys show $WALLET --bech val -a) 1000000ulume --from $WALLET --chain-id lumera-testnet-2 --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
 </code></pre>
 <h3 id="delegate">Delegate</h3>
-<pre><code class="language-bash">lumerad tx staking delegate &lt;TO_VALOPER_ADDRESS&gt; 1000000000akii --from $WALLET --chain-id lumera-testnet-2 --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
+<pre><code class="language-bash">lumerad tx staking delegate &lt;TO_VALOPER_ADDRESS&gt; 1000000ulume --from $WALLET --chain-id lumera-testnet-2 --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
 </code></pre>
 <h3 id="redelegate-stake-to-another-validator">Redelegate Stake to Another Validator</h3>
-<pre><code class="language-bash">lumerad tx staking redelegate $VALOPER_ADDRESS &lt;TO_VALOPER_ADDRESS&gt; 1000000000akii --from $WALLET --chain-id lumera-testnet-2 --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
+<pre><code class="language-bash">lumerad tx staking redelegate $VALOPER_ADDRESS &lt;TO_VALOPER_ADDRESS&gt; 1000000ulume --from $WALLET --chain-id lumera-testnet-2 --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
 </code></pre>
 <h3 id="unbond">Unbond</h3>
-<pre><code class="language-bash">lumerad tx staking unbond $(lumerad keys show $WALLET --bech val -a) 1000000000akii --from $WALLET --chain-id lumera-testnet-2 --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
+<pre><code class="language-bash">lumerad tx staking unbond $(lumerad keys show $WALLET --bech val -a) 1000000ulume --from $WALLET --chain-id lumera-testnet-2 --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
 </code></pre>
 <h3 id="transfer-funds">Transfer Funds</h3>
-<pre><code class="language-bash">lumerad tx bank send $WALLET_ADDRESS &lt;TO_WALLET_ADDRESS&gt; 1000000000akii --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
+<pre><code class="language-bash">lumerad tx bank send $WALLET_ADDRESS &lt;TO_WALLET_ADDRESS&gt; 1000000ulume --gas-prices=0.025ulume --gas-adjustment=1.5 --gas=auto -y
 </code></pre>
 <hr />
 <h2 id="validator-operations">🛡️ Validator Operations</h2>
@@ -1894,7 +1894,9 @@
 --details &quot;Kyronode for all&quot; \
 --from $WALLET \
 --chain-id lumera-testnet-2 \
---fees 1250000000akii \
+--fees 0.025ulume \
+--gas-adjustment 1.3 \
+--gas auto \
 -y
 </code></pre>
 <hr />

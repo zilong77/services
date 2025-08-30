@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#node-installation-guide" class="md-skip">
+        <a href="#safrochain-installation-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -1515,9 +1515,9 @@
 
 
 
-<h1 id="node-installation-guide">🚀 Node Installation Guide</h1>
-<p>This guide helps you set up and run a Kiichain Node.<br />
-🔗 <a href="https://www.kiiglobal.io/">Website</a> | <a href="https://discord.gg/4wNJRqR9">Discord</a> | <a href="https://x.com/KiiChainio">Twitter</a></p>
+<h1 id="safrochain-installation-guide">🚀 Safrochain Installation Guide</h1>
+<p>This guide helps you set up and run a Safrochain Node.<br />
+🔗 <a href="https://safrochain.com/">Website</a> | <a href="https://discord.gg/3Q3w3mqvXU">Discord</a> | <a href="https://x.com/safrochain">Twitter</a></p>
 <hr />
 <h2 id="recommended-specifications">📋 Recommended Specifications</h2>
 <table>
@@ -1591,8 +1591,8 @@ wget -O $HOME/.safrochain/config/addrbook.json https://github.com/kyronode/all-a
 </code></pre>
 <hr />
 <h2 id="set-seeds-peers">Set Seeds &amp; Peers</h2>
-<pre><code class="language-bash">SEEDS=&quot;408ede05d42c077c7e6f069e9dede07074f40911@94.130.143.184:19656&quot;
-PEERS=&quot;5b6aa55124c0fd28e47d7da091a69973964a9fe1@uno.sentry.testnet.v3.kiivalidator.com:26656,5e6b283c8879e8d1b0866bda20949f9886aff967@dos.sentry.testnet.v3.kiivalidator.com:26656&quot;
+<pre><code class="language-bash">SEEDS=&quot;2242a526e7841e7e8a551aabc4614e6cd612e7fb@88.99.211.113:26656,642dfd491b8bfc0b842c71c01a12ee1122f3dafe@46.62.140.103:26656&quot;
+PEERS=&quot;9df9e898213296e0180bdad54c30cb5f3c424a42@78.46.215.249:26656,1ac9964262094380ab20278979de72280d7bfc59@152.53.182.15:21656,642dfd491b8bfc0b842c71c01a12ee1122f3dafe@46.62.140.103:26656,693c44c8fdeea31ceadf43f98d73fdf317bd70b8@62.169.16.57:21656,88fb1dd0ed4e81389215ce663a7219d0ce54cf59@161.97.101.168:26656,d001827cf6adb1b6b63284189127e5d844173889@143.198.91.87:26656,b4b711560e62b3a850193f3fa85c82e6ccf4c013@135.181.178.120:12656,525aed9c85f89d9a70c0f2048b1b0e7695c3d03a@37.60.252.195:21656,637077d431f618181597706810a65c826524fd74@176.9.120.85:32756&quot;
 sed -i -e &quot;s/^seeds *=.*/seeds = \&quot;$SEEDS\&quot;/&quot; $HOME/.safrochain/config/config.toml
 sed -i -e &quot;s/^persistent_peers *=.*/persistent_peers = \&quot;$PEERS\&quot;/&quot; $HOME/.safrochain/config/config.toml
 </code></pre>
@@ -1677,7 +1677,7 @@ source $HOME/.bash_profile
 <pre><code class="language-bash">cd $HOME
 echo &quot;{
   \&quot;pubkey\&quot;: {\&quot;@type\&quot;: \&quot;/cosmos.crypto.ed25519.PubKey\&quot;, \&quot;key\&quot;: \&quot;$(safrochaind tendermint show-validator | grep -Po '\&quot;key\&quot;:\s*\&quot;\K[^\&quot;]*')\&quot;},
-  \&quot;amount\&quot;: \&quot;1000000000000000000akii\&quot;,
+  \&quot;amount\&quot;: \&quot;1000000usaf\&quot;,
   \&quot;moniker\&quot;: \&quot;&lt;YOUR_MONIKER&gt;\&quot;,
   \&quot;identity\&quot;: \&quot;&lt;YOUR_IDENTITY&gt;\&quot;,
   \&quot;website\&quot;: \&quot;&lt;YOUR_WEBSITE&gt;\&quot;,
@@ -1691,9 +1691,9 @@ echo &quot;{
 
 # Create a validator using the JSON configuration
 safrochaind tx staking create-validator validator.json \
-    --from wallet \
-    --chain-id oro_1336-1 \
-    --gas-prices 1250000000akii \
+    --from $WALLET \
+    --chain-id safro-testnet-1 \
+    --fees 5000usaf \
     --gas-adjustment 1.3 \
     --gas auto \
     -y
