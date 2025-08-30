@@ -5,7 +5,7 @@
 ## 📡 RPC Endpoints
 - RPC: 
 ```bash 
-https://api-zenrock.kyronode.xyz
+https://rpc-zenrock.kyronode.xyz
 ```
 
 ---
