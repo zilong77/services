@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#upgrade-kiichain-testnet" class="md-skip">
+        <a href="#upgrade-lumera-testnet" class="md-skip">
           Skip to content
         </a>
       
@@ -1380,21 +1380,17 @@
 
 
 
-<h1 id="upgrade-kiichain-testnet">⚡ Upgrade - Kiichain (Testnet)</h1>
+<h1 id="upgrade-lumera-testnet">⚡ Upgrade - Lumera (Testnet)</h1>
 <h2 id="manual-upgrade">Manual Upgrade</h2>
 <pre><code class="language-bash">cd $HOME
-sudo systemctl stop kiichaind
-rm -rf kiichain
-git clone https://github.com/KiiChain/kiichain.git
-cd kiichain
-git fetch --tags
-git checkout v4.0.0
-make build
-mv $HOME/go/bin/kiichaind $HOME/go/bin/kiichaind_backup
-cp build/kiichaind $HOME/go/bin/kiichaind
-chmod +x $HOME/go/bin/kiichaind
-kiichaind version
-sudo systemctl start kiichaind
+sudo systemctl stop lumerad
+wget https://github.com/LumeraProtocol/lumera/releases/download/v1.7.0/lumera_v1.7.0_linux_amd64.tar.gz
+tar -xvf lumera_v1.7.0_linux_amd64.tar.gz
+rm lumera_v1.7.0_linux_amd64.tar.gz
+rm install.sh
+chmod +x lumerad
+mv lumerad $HOME/go/bin/
+sudo systemctl start lumerad
 </code></pre>
 
 

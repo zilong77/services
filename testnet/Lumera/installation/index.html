@@ -1516,15 +1516,14 @@
 
 
 <h1 id="node-installation-guide">🚀 Node Installation Guide</h1>
-<p>This guide helps you set up and run a Kiichain Node.<br />
-🔗 <a href="https://www.kiiglobal.io/">Website</a> | <a href="https://discord.gg/4wNJRqR9">Discord</a> | <a href="https://x.com/KiiChainio">Twitter</a></p>
+<p>This guide helps you set up and run a Lumera Node.<br />
+🔗 <a href="https://lumera.io/">Website</a> | <a href="https://discord.gg/GUzSvAhF">Discord</a> | <a href="https://x.com/lumeraprotocol">Twitter</a></p>
 <hr />
 <h2 id="recommended-specifications">📋 Recommended Specifications</h2>
 <table>
 <thead>
 <tr>
 <th>Component</th>
-<th>Minimum</th>
 <th>Recommended</th>
 </tr>
 </thead>
@@ -1532,21 +1531,17 @@
 <tr>
 <td>CPU</td>
 <td>4 Cores</td>
-<td>4+ Cores</td>
 </tr>
 <tr>
 <td>RAM</td>
 <td>8 GB</td>
-<td>8+ GB</td>
 </tr>
 <tr>
 <td>Storage</td>
 <td>1 TB NVMe SSD</td>
-<td>2 TB NVMe SSD</td>
 </tr>
 <tr>
 <td>OS</td>
-<td>Ubuntu 22.04</td>
 <td>Ubuntu 22.04</td>
 </tr>
 </tbody>
@@ -1554,7 +1549,7 @@
 <hr />
 <h2 id="install-go-if-you-dont-have-one">Install Go (if you don't have one)</h2>
 <pre><code class="language-bash">cd $HOME
-VER=&quot;1.23.8&quot;
+VER=&quot;1.23.4&quot;
 wget &quot;https://golang.org/dl/go$VER.linux-amd64.tar.gz&quot;
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf &quot;go$VER.linux-amd64.tar.gz&quot;
@@ -1577,29 +1572,31 @@ source $HOME/.bash_profile
 <hr />
 <h2 id="download-binary">Download Binary</h2>
 <pre><code class="language-bash">cd $HOME
-rm -rf kiichain
-git clone https://github.com/KiiChain/kiichain.git
-cd kiichain
-git checkout v4.0.0
-make install
+wget https://github.com/LumeraProtocol/lumera/releases/download/v1.7.0/lumera_v1.7.0_linux_amd64.tar.gz
+tar -xvf lumera_v1.7.0_linux_amd64.tar.gz
+rm lumera_v1.7.0_linux_amd64.tar.gz
+rm install.sh
+chmod +x lumerad
+mv lumerad $HOME/go/bin/
+mv libwasmvm.x86_64.so /usr/lib/
 </code></pre>
 <hr />
 <h2 id="init-config">Init &amp; Config</h2>
-<pre><code class="language-bash">kiichaind init $MONIKER --chain-id oro_1336-1
-kiichaind config set client chain-id oro_1336-1
-kiichaind config set client node tcp://localhost:${APP_PORT}657
+<pre><code class="language-bash">lumerad init $MONIKER --chain-id lumera-testnet-2
+lumerad config set client chain-id lumera-testnet-2
+lumerad config set client node tcp://localhost:${APP_PORT}657
 </code></pre>
 <hr />
 <h2 id="download-genesis-addrbook">Download Genesis &amp; Addrbook</h2>
-<pre><code class="language-bash">wget -O $HOME/.kiichain/config/genesis.json https://raw.githubusercontent.com/KiiChain/testnets/refs/heads/main/testnet_oro/genesis.json
-wget -O $HOME/.kiichain/config/addrbook.json https://snapshot-t.vinjan.xyz/kiichain/addrbook.json
+<pre><code class="language-bash">wget -O $HOME/.lumera/config/genesis.json https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Testnet/Lumera/genesis.json
+wget -O $HOME/.lumera/config/addrbook.json https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Testnet/Lumera/addrbook.json
 </code></pre>
 <hr />
 <h2 id="set-seeds-peers">Set Seeds &amp; Peers</h2>
 <pre><code class="language-bash">SEEDS=&quot;408ede05d42c077c7e6f069e9dede07074f40911@94.130.143.184:19656&quot;
 PEERS=&quot;5b6aa55124c0fd28e47d7da091a69973964a9fe1@uno.sentry.testnet.v3.kiivalidator.com:26656,5e6b283c8879e8d1b0866bda20949f9886aff967@dos.sentry.testnet.v3.kiivalidator.com:26656&quot;
-sed -i -e &quot;s/^seeds *=.*/seeds = \&quot;$SEEDS\&quot;/&quot; $HOME/.kiichain/config/config.toml
-sed -i -e &quot;s/^persistent_peers *=.*/persistent_peers = \&quot;$PEERS\&quot;/&quot; $HOME/.kiichain/config/config.toml
+sed -i -e &quot;s/^seeds *=.*/seeds = \&quot;$SEEDS\&quot;/&quot; $HOME/.lumera/config/config.toml
+sed -i -e &quot;s/^persistent_peers *=.*/persistent_peers = \&quot;$PEERS\&quot;/&quot; $HOME/.lumera/config/config.toml
 </code></pre>
 <hr />
 <h2 id="custom-ports">Custom Ports</h2>
@@ -1610,7 +1607,7 @@ s%:9090%:${APP_PORT}090%g;
 s%:9091%:${APP_PORT}091%g;
 s%:8545%:${APP_PORT}545%g;
 s%:8546%:${APP_PORT}546%g;
-s%:6065%:${APP_PORT}065%g&quot; $HOME/.kiichain/config/app.toml
+s%:6065%:${APP_PORT}065%g&quot; $HOME/.lumera/config/app.toml
 
 # config.toml
 sed -i.bak -e &quot;s%:26658%:${APP_PORT}658%g;
@@ -1618,30 +1615,30 @@ s%:26657%:${APP_PORT}657%g;
 s%:6060%:${APP_PORT}060%g;
 s%:26656%:${APP_PORT}656%g;
 s%^external_address = \&quot;\&quot;%external_address = \&quot;$(wget -qO- eth0.me):${APP_PORT}656\&quot;%;
-s%:26660%:${APP_PORT}660%g&quot; $HOME/.kiichain/config/config.toml
+s%:26660%:${APP_PORT}660%g&quot; $HOME/.lumera/config/config.toml
 </code></pre>
 <hr />
 <h2 id="pruning">Pruning</h2>
-<pre><code class="language-bash">sed -i -e &quot;s/^pruning *=.*/pruning = \&quot;custom\&quot;/&quot; $HOME/.kiichain/config/app.toml 
-sed -i -e &quot;s/^pruning-keep-recent *=.*/pruning-keep-recent = \&quot;100\&quot;/&quot; $HOME/.kiichain/config/app.toml
-sed -i -e &quot;s/^pruning-interval *=.*/pruning-interval = \&quot;10\&quot;/&quot; $HOME/.kiichain/config/app.toml
+<pre><code class="language-bash">sed -i -e &quot;s/^pruning *=.*/pruning = \&quot;custom\&quot;/&quot; $HOME/.lumera/config/app.toml 
+sed -i -e &quot;s/^pruning-keep-recent *=.*/pruning-keep-recent = \&quot;100\&quot;/&quot; $HOME/.lumera/config/app.toml
+sed -i -e &quot;s/^pruning-interval *=.*/pruning-interval = \&quot;10\&quot;/&quot; $HOME/.lumera/config/app.toml
 </code></pre>
 <hr />
 <h2 id="min-gas-prometheus-indexer">Min Gas, Prometheus, Indexer</h2>
-<pre><code class="language-bash">sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = &quot;1000000000akii&quot;|g' $HOME/.kiichain/config/app.toml
-sed -i -e &quot;s/prometheus = false/prometheus = true/&quot; $HOME/.kiichain/config/config.toml
-sed -i -e &quot;s/^indexer *=.*/indexer = \&quot;null\&quot;/&quot; $HOME/.kiichain/config/config.toml
+<pre><code class="language-bash">sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = &quot;0.025ulume&quot;|g' $HOME/.lumera/config/app.toml
+sed -i -e &quot;s/prometheus = false/prometheus = true/&quot; $HOME/.lumera/config/config.toml
+sed -i -e &quot;s/^indexer *=.*/indexer = \&quot;null\&quot;/&quot; $HOME/.lumera/config/config.toml
 </code></pre>
 <hr />
 <h2 id="create-service-file">Create Service File</h2>
-<pre><code class="language-bash">sudo tee /etc/systemd/system/kiichaind.service &gt; /dev/null &lt;&lt;EOF
+<pre><code class="language-bash">sudo tee /etc/systemd/system/lumerad.service &gt; /dev/null &lt;&lt;EOF
 [Unit]
-Description=kiichaind Node
+Description=lumerad Node
 After=network-online.target
 [Service]
 User=$USER
-WorkingDirectory=$HOME/.kiichain
-ExecStart=$(which kiichaind) start --home $HOME/.kiichain
+WorkingDirectory=$HOME/.lumera
+ExecStart=$(which lumerad) start --home $HOME/.lumera
 Restart=on-failure
 RestartSec=5
 LimitNOFILE=65535
@@ -1652,21 +1649,28 @@ EOF
 <hr />
 <h2 id="start-service">Start Service</h2>
 <pre><code class="language-bash">sudo systemctl daemon-reload
-sudo systemctl enable kiichaind
-sudo systemctl restart kiichaind &amp;&amp; sudo journalctl -u kiichaind -fo cat
+sudo systemctl enable lumerad
+sudo systemctl restart lumerad &amp;&amp; sudo journalctl -u lumerad -fo cat
 </code></pre>
 <hr />
 <h2 id="node-synchronize-checker">Node Synchronize Checker</h2>
 <pre><code class="language-bash"># Paste this to your terminal
-bash &lt;(curl -s https://raw.githubusercontent.com/kyronode/Testnet/main/kiichain-sync.sh)
+bash &lt;(curl -s https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Testnet/Lumera/lumera-sync.sh)
 </code></pre>
 <hr />
 <h2 id="create-or-restore-wallet">Create or Restore Wallet</h2>
 <p><code>Create new wallet and save ur mnemonics securely</code></p>
-<pre><code class="language-bash">kiichaind keys add $WALLET
+<pre><code class="language-bash">lumerad keys add $WALLET
 </code></pre>
 <p><code>If u want to restore use this command</code></p>
-<pre><code class="language-bash">kiichaind keys add $WALLET --recover
+<pre><code class="language-bash">lumerad keys add $WALLET --recover
+</code></pre>
+<p><code>Set keys variable enviroment</code></p>
+<pre><code class="language-bash">WALLET_ADDRESS=$(lumerad keys show $WALLET -a)
+VALOPER_ADDRESS=$(lumerad keys show $WALLET --bech val -a)
+echo &quot;export WALLET_ADDRESS=&quot;$WALLET_ADDRESS &gt;&gt; $HOME/.bash_profile
+echo &quot;export VALOPER_ADDRESS=&quot;$VALOPER_ADDRESS &gt;&gt; $HOME/.bash_profile
+source $HOME/.bash_profile
 </code></pre>
 <hr />
 <h2 id="create-validator">Create Validator</h2>
@@ -1674,8 +1678,8 @@ bash &lt;(curl -s https://raw.githubusercontent.com/kyronode/Testnet/main/kiicha
 <code>Please Change &lt;YOUR_MONIKER&gt;&lt;YOUR_IDENTITY&gt;&lt;YOUR_WEBSITE&gt;&lt;YOUR_DETAILS&gt; with ur own.</code></p>
 <pre><code class="language-bash">cd $HOME
 echo &quot;{
-  \&quot;pubkey\&quot;: {\&quot;@type\&quot;: \&quot;/cosmos.crypto.ed25519.PubKey\&quot;, \&quot;key\&quot;: \&quot;$(kiichaind tendermint show-validator | grep -Po '\&quot;key\&quot;:\s*\&quot;\K[^\&quot;]*')\&quot;},
-  \&quot;amount\&quot;: \&quot;1000000000000000000akii\&quot;,
+  \&quot;pubkey\&quot;: {\&quot;@type\&quot;: \&quot;/cosmos.crypto.ed25519.PubKey\&quot;, \&quot;key\&quot;: \&quot;$(lumerad tendermint show-validator | grep -Po '\&quot;key\&quot;:\s*\&quot;\K[^\&quot;]*')\&quot;},
+  \&quot;amount\&quot;: \&quot;1000000ulume\&quot;,
   \&quot;moniker\&quot;: \&quot;&lt;YOUR_MONIKER&gt;\&quot;,
   \&quot;identity\&quot;: \&quot;&lt;YOUR_IDENTITY&gt;\&quot;,
   \&quot;website\&quot;: \&quot;&lt;YOUR_WEBSITE&gt;\&quot;,
@@ -1688,10 +1692,10 @@ echo &quot;{
 }&quot; &gt; validator.json
 
 # Create a validator using the JSON configuration
-kiichaind tx staking create-validator validator.json \
+lumerad tx staking create-validator validator.json \
     --from wallet \
-    --chain-id oro_1336-1 \
-    --gas-prices 1250000000akii \
+    --chain-id lumera-testnet-2 \
+    --fees 0.025ulume \
     --gas-adjustment 1.3 \
     --gas auto \
     -y
@@ -1699,12 +1703,12 @@ kiichaind tx staking create-validator validator.json \
 <hr />
 <h2 id="delete-node">Delete Node</h2>
 <p><code>Please backup ur wallet and important file like "priv_validator_key.json" before deleting.</code> </p>
-<pre><code class="language-bash">sudo systemctl stop kiichaind
-sudo systemctl disable kiichaind
+<pre><code class="language-bash">sudo systemctl stop lumerad
+sudo systemctl disable lumerad
 sudo systemctl daemon-reload
-sudo rm -rf /etc/systemd/system/kiichaind.service
-sudo rm $(which kiichaind)
-sudo rm -rf $HOME/.kiichain
+sudo rm -rf /etc/systemd/system/lumerad.service
+sudo rm $(which lumerad)
+sudo rm -rf $HOME/.lumera
 </code></pre>
 
 
