@@ -4,7 +4,7 @@ site_url: https://services.kyronode.xyz
 theme:
   name: material
   logo: assets/logo.png
-  favicon: assets/favicon.ico
+  favicon: assets/favicon.png
   icon:
     previous: fontawesome/solid/arrow-left
     next: fontawesome/solid/arrow-right
@@ -62,10 +62,12 @@ nav:
   - Mainnet:
       - Overview: mainnet/_index.md
       - Bitbadges:
+          - Network: mainnet/Bitbadges/network.md
           - Installation: mainnet/Bitbadges/installation.md
           - Cheat Sheet: mainnet/Bitbadges/cheatsheet.md
           - Upgrade: mainnet/Bitbadges/upgrade.md
-      - Bitbadges:
+      - Zenrock:
+          - Network: mainnet/Zenrock/network.md
           - Installation: mainnet/Zenrock/installation.md
           - Cheat Sheet: mainnet/Zenrock/cheatsheet.md
           - Upgrade: mainnet/Zenrock/upgrade.md

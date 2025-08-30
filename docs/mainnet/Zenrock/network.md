@@ -34,6 +34,7 @@ nodeid1@peer1.yourchain.org:26656,
 ---
 
 ## 🌱 Seeds
+*We provide only active peers from our scanner:*
 ```text
 seed1@seed1.yourchain.org:26656,
 ```

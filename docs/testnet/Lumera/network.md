@@ -27,6 +27,7 @@ wget -O $HOME/.yourchaind/config/genesis.json https://snapshots.yourchain.org/ge
 ---
 
 ## 🔗 Persistent Peers
+*We provide only active peers from our scanner:*
 ```text
 nodeid1@peer1.yourchain.org:26656,
 ```
