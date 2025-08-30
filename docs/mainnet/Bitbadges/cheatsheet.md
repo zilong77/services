@@ -102,7 +102,7 @@ bitbadgeschaind tx distribution withdraw-all-rewards --from $WALLET --chain-id b
 
 ### Withdraw rewards and commission from your validator
 ```bash
-bitbadgeschaind tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id bitbadges-1 --fees 0.025ubadge -y
+bitbadgeschaind tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id bitbadges-1 --gas auto --gas-adjustment 1.3 --fees 0.025ubadge -y
 ```
 
 ### Check your balance
@@ -112,27 +112,27 @@ bitbadgeschaind query bank balances $WALLET_ADDRESS
 
 ### Delegate to Yourself
 ```bash
-bitbadgeschaind tx staking delegate $(bitbadgeschaind keys show $WALLET --bech val -a) 1000000000ubadge --from $WALLET --chain-id bitbadges-1 --fees 0.025ubadge -y
+bitbadgeschaind tx staking delegate $(bitbadgeschaind keys show $WALLET --bech val -a) 1000000000ubadge --from $WALLET --chain-id bitbadges-1 --gas auto --gas-adjustment 1.3 --fees 0.025ubadge -y
 ```
 
 ### Delegate
 ```bash
-bitbadgeschaind tx staking delegate <TO_VALOPER_ADDRESS> 1000000000ubadge --from $WALLET --chain-id bitbadges-1 --fees 0.025ubadge -y
+bitbadgeschaind tx staking delegate <TO_VALOPER_ADDRESS> 1000000000ubadge --from $WALLET --chain-id bitbadges-1 --gas auto --gas-adjustment 1.3 --gas auto --gas-adjustment 1.3 --fees 0.025ubadge -y
 ```
 
 ### Redelegate Stake to Another Validator
 ```bash
-bitbadgeschaind tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000000ubadge --from $WALLET --chain-id bitbadges-1 --fees 0.025ubadge -y
+bitbadgeschaind tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000000ubadge --from $WALLET --chain-id bitbadges-1 --gas auto --gas-adjustment 1.3 --fees 0.025ubadge -y
 ```
 
 ### Unbond
 ```bash
-bitbadgeschaind tx staking unbond $(bitbadgeschaind keys show $WALLET --bech val -a) 1000000000ubadge --from $WALLET --chain-id bitbadges-1 --fees 0.025ubadge -y
+bitbadgeschaind tx staking unbond $(bitbadgeschaind keys show $WALLET --bech val -a) 1000000000ubadge --from $WALLET --chain-id bitbadges-1 --gas auto --gas-adjustment 1.3 --fees 0.025ubadge -y
 ```
 
 ### Transfer Funds
 ```bash
-bitbadgeschaind tx bank send $WALLET_ADDRESS <TO_WALLET_ADDRESS> 1000000000ubadge --fees 0.025ubadge -y
+bitbadgeschaind tx bank send $WALLET_ADDRESS <TO_WALLET_ADDRESS> 1000000000ubadge --gas auto --gas-adjustment 1.3 --fees 0.025ubadge -y
 ```
 
 ---
@@ -161,7 +161,7 @@ bitbadgeschaind q slashing params
 
 ### Unjail validator
 ```bash
-bitbadgeschaind tx slashing unjail --from $WALLET --chain-id bitbadges-1 --fees 0.025ubadge -y
+bitbadgeschaind tx slashing unjail --from $WALLET --chain-id bitbadges-1 --gas auto --gas-adjustment 1.3 --fees 0.025ubadge -y
 ```
 
 ### Active Validators List
@@ -208,5 +208,5 @@ bitbadgeschaind query gov proposal 1
 
 ### Vote
 ```bash
-bitbadgeschaind tx gov vote 1 yes --from $WALLET --chain-id bitbadges-1 --fees 0.025ubadge -y
+bitbadgeschaind tx gov vote 1 yes --from $WALLET --chain-id bitbadges-1 --gas auto --gas-adjustment 1.3 --fees 0.025ubadge -y
 ```

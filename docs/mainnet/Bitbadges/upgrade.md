@@ -1,4 +1,4 @@
-# ⚡ Upgrade - Kiichain (Testnet)
+# ⚡ Upgrade - Bitbadges (Mainnet)
 
 ## Manual Upgrade
 

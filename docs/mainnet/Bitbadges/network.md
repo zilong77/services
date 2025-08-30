@@ -5,7 +5,7 @@
 ## 📡 RPC Endpoints
 - RPC: 
 ```bash
-~~https://rpc-bitbadges.kyronode.xyz~~
+https://rpc-bitbadges.kyronode.xyz
 ```
 
 ---
@@ -13,7 +13,7 @@
 ## 🔎 API Endpoints
 - API:
 ```bash 
-~~https://api-bitbadges.kyronode.xyz~~
+https://api-bitbadges.kyronode.xyz
 ```
 
 ---

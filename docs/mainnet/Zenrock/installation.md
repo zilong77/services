@@ -1,25 +1,25 @@
-# 🚀 Node Installation Guide
+# 🚀 Zenrock Installation Guide
 
-This guide helps you set up and run a Kiichain Node.  
-🔗 [Website](https://www.kiiglobal.io/) | [Discord](https://discord.gg/4wNJRqR9) | [Twitter](https://x.com/KiiChainio)
+This guide helps you set up and run a Zenrock Node.  
+🔗 [Website](https://zenrocklabs.io/) | [Discord](https://discord.gg/hX4jng2s) | [Twitter](https://x.com/OfficialZenRock)
 
 ---
 
 ## 📋 Recommended Specifications
 
-| Component | Minimum | Recommended |
-|-----------|----------|-------------|
-| CPU       | 4 Cores  | 4+ Cores    |
-| RAM       | 8 GB     | 8+ GB       |
-| Storage   | 1 TB NVMe SSD | 2 TB NVMe SSD |
-| OS        | Ubuntu 22.04 | Ubuntu 22.04 |
+| Component | Recommended |
+|-----------|----------|
+| CPU       | 4 Cores  |
+| RAM       | 8 GB     |
+| Storage   | 200 GB NVMe SSD |
+| OS        | Ubuntu 22.04 |
 
 ---
 
 ## Install Go (if you don't have one)
 ```bash
 cd $HOME
-VER="1.23.8"
+VER="1.23.1"
 wget "https://golang.org/dl/go$VER.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$VER.linux-amd64.tar.gz"
@@ -48,38 +48,38 @@ source $HOME/.bash_profile
 ## Download Binary
 ```bash
 cd $HOME
-rm -rf kiichain
-git clone https://github.com/KiiChain/kiichain.git
-cd kiichain
-git checkout v4.0.0
-make install
+wget -O zenrockd.zip https://github.com/Zenrock-Foundation/zrchain/releases/download/v6.25.0/zenrockd.zip
+unzip zenrockd.zip
+rm zenrockd.zip
+chmod +x $HOME/zenrockd
+sudo mv $HOME/zenrockd $HOME/go/bin/
 ```
 
 ---
 
 ## Init & Config
 ```bash
-kiichaind init $MONIKER --chain-id oro_1336-1
-kiichaind config set client chain-id oro_1336-1
-kiichaind config set client node tcp://localhost:${APP_PORT}657
+zenrockd init $MONIKER --chain-id diamond-1
+zenrockd config set client chain-id diamond-1
+zenrockd config set client node tcp://localhost:${APP_PORT}657
 ```
 
 ---
 
 ## Download Genesis & Addrbook
 ```bash
-wget -O $HOME/.kiichain/config/genesis.json https://raw.githubusercontent.com/KiiChain/testnets/refs/heads/main/testnet_oro/genesis.json
-wget -O $HOME/.kiichain/config/addrbook.json https://snapshot-t.vinjan.xyz/kiichain/addrbook.json
+wget -O $HOME/.zrchain/config/genesis.json https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Mainnet/Zenrock/genesis.json
+wget -O $HOME/.zrchain/config/addrbook.json https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Mainnet/Zenrock/addrbook.json
 ```
 
 ---
 
 ## Set Seeds & Peers
 ```bash
-SEEDS="408ede05d42c077c7e6f069e9dede07074f40911@94.130.143.184:19656"
-PEERS="5b6aa55124c0fd28e47d7da091a69973964a9fe1@uno.sentry.testnet.v3.kiivalidator.com:26656,5e6b283c8879e8d1b0866bda20949f9886aff967@dos.sentry.testnet.v3.kiivalidator.com:26656"
-sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/" $HOME/.kiichain/config/config.toml
-sed -i -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.kiichain/config/config.toml
+SEEDS="e6c3373d68c504bd89bf77c27a8ac30597afeb2d@zenrock-mainnet-seed.itrocket.net:56656"
+PEERS="2f037a6461c012f3296ab1815b3c47843bcd7c3a@zenrock-mainnet-peer.itrocket.net:59656,5ad8a5de6318529994da817043b268ef617e37ba@34.251.37.55:26656"
+sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/" $HOME/.zrchain/config/config.toml
+sed -i -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.zrchain/config/config.toml
 ```
 
 ---
@@ -93,7 +93,7 @@ s%:9090%:${APP_PORT}090%g;
 s%:9091%:${APP_PORT}091%g;
 s%:8545%:${APP_PORT}545%g;
 s%:8546%:${APP_PORT}546%g;
-s%:6065%:${APP_PORT}065%g" $HOME/.kiichain/config/app.toml
+s%:6065%:${APP_PORT}065%g" $HOME/.zrchain/config/app.toml
 
 # config.toml
 sed -i.bak -e "s%:26658%:${APP_PORT}658%g;
@@ -101,39 +101,39 @@ s%:26657%:${APP_PORT}657%g;
 s%:6060%:${APP_PORT}060%g;
 s%:26656%:${APP_PORT}656%g;
 s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${APP_PORT}656\"%;
-s%:26660%:${APP_PORT}660%g" $HOME/.kiichain/config/config.toml
+s%:26660%:${APP_PORT}660%g" $HOME/.zrchain/config/config.toml
 ```
 
 ---
 
 ## Pruning
 ```bash
-sed -i -e "s/^pruning *=.*/pruning = \"custom\"/" $HOME/.kiichain/config/app.toml 
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME/.kiichain/config/app.toml
-sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"10\"/" $HOME/.kiichain/config/app.toml
+sed -i -e "s/^pruning *=.*/pruning = \"custom\"/" $HOME/.zrchain/config/app.toml 
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME/.zrchain/config/app.toml
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"10\"/" $HOME/.zrchain/config/app.toml
 ```
 
 ---
 
 ## Min Gas, Prometheus, Indexer
 ```bash
-sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "1000000000akii"|g' $HOME/.kiichain/config/app.toml
-sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.kiichain/config/config.toml
-sed -i -e "s/^indexer *=.*/indexer = \"null\"/" $HOME/.kiichain/config/config.toml
+sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "0urock"|g' $HOME/.zrchain/config/app.toml
+sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.zrchain/config/config.toml
+sed -i -e "s/^indexer *=.*/indexer = \"null\"/" $HOME/.zrchain/config/config.toml
 ```
 
 ---
 
 ## Create Service File
 ```bash
-sudo tee /etc/systemd/system/kiichaind.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/zenrockd.service > /dev/null <<EOF
 [Unit]
-Description=kiichaind Node
+Description=zenrockd Node
 After=network-online.target
 [Service]
 User=$USER
-WorkingDirectory=$HOME/.kiichain
-ExecStart=$(which kiichaind) start --home $HOME/.kiichain
+WorkingDirectory=$HOME/.zrchain
+ExecStart=$(which zenrockd) start --home $HOME/.zrchain
 Restart=on-failure
 RestartSec=5
 LimitNOFILE=65535
@@ -147,8 +147,8 @@ EOF
 ## Start Service
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl enable kiichaind
-sudo systemctl restart kiichaind && sudo journalctl -u kiichaind -fo cat
+sudo systemctl enable zenrockd
+sudo systemctl restart zenrockd && sudo journalctl -u zenrockd -fo cat
 ```
 
 ---
@@ -164,11 +164,19 @@ bash <(curl -s https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/
 ## Create or Restore Wallet
 `Create new wallet and save ur mnemonics securely`
 ```bash
-kiichaind keys add $WALLET
+zenrockd keys add $WALLET
 ```
 `If u want to restore use this command`
 ```bash
-kiichaind keys add $WALLET --recover
+zenrockd keys add $WALLET --recover
+```
+`Set keys variable enviroment`
+```bash
+WALLET_ADDRESS=$(bitbadgeschaind keys show $WALLET -a)
+VALOPER_ADDRESS=$(bitbadgeschaind keys show $WALLET --bech val -a)
+echo "export WALLET_ADDRESS="$WALLET_ADDRESS >> $HOME/.bash_profile
+echo "export VALOPER_ADDRESS="$VALOPER_ADDRESS >> $HOME/.bash_profile
+source $HOME/.bash_profile
 ```
 
 ---
@@ -179,8 +187,8 @@ If ur node has been fully synchronized, then u can create ur validator:
 ```bash
 cd $HOME
 echo "{
-  \"pubkey\": {\"@type\": \"/cosmos.crypto.ed25519.PubKey\", \"key\": \"$(kiichaind tendermint show-validator | grep -Po '\"key\":\s*\"\K[^\"]*')\"},
-  \"amount\": \"1000000000000000000akii\",
+  \"pubkey\": {\"@type\": \"/cosmos.crypto.ed25519.PubKey\", \"key\": \"$(zenrockd tendermint show-validator | grep -Po '\"key\":\s*\"\K[^\"]*')\"},
+  \"amount\": \"1000000urock\",
   \"moniker\": \"<YOUR_MONIKER>\",
   \"identity\": \"<YOUR_IDENTITY>\",
   \"website\": \"<YOUR_WEBSITE>\",
@@ -193,13 +201,13 @@ echo "{
 }" > validator.json
 
 # Create a validator using the JSON configuration
-kiichaind tx staking create-validator validator.json \
-    --from wallet \
-    --chain-id oro_1336-1 \
-    --gas-prices 1250000000akii \
-    --gas-adjustment 1.3 \
-    --gas auto \
-    -y
+zenrockd tx staking create-validator validator.json \
+--from $WALLET \
+--chain-id diamond-1 \
+--gas auto \
+--gas-adjustment 1.5 \
+--fees 30urock \
+-y
 ```
 
 ---
@@ -207,10 +215,10 @@ kiichaind tx staking create-validator validator.json \
 ## Delete Node
 `Please backup ur wallet and important file like "priv_validator_key.json" before deleting.` 
 ```bash
-sudo systemctl stop kiichaind
-sudo systemctl disable kiichaind
+sudo systemctl stop zenrockd
+sudo systemctl disable zenrockd
 sudo systemctl daemon-reload
-sudo rm -rf /etc/systemd/system/kiichaind.service
-sudo rm $(which kiichaind)
-sudo rm -rf $HOME/.kiichain
+sudo rm -rf /etc/systemd/system/zenrockd.service
+sudo rm $(which zenrockd)
+sudo rm -rf $HOME/.zrchain
 ```

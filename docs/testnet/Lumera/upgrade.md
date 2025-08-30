@@ -1,19 +1,15 @@
-# ⚡ Upgrade - Kiichain (Testnet)
+# ⚡ Upgrade - Lumera (Testnet)
 
 ## Manual Upgrade
 
 ```bash
 cd $HOME
-sudo systemctl stop kiichaind
-rm -rf kiichain
-git clone https://github.com/KiiChain/kiichain.git
-cd kiichain
-git fetch --tags
-git checkout v4.0.0
-make build
-mv $HOME/go/bin/kiichaind $HOME/go/bin/kiichaind_backup
-cp build/kiichaind $HOME/go/bin/kiichaind
-chmod +x $HOME/go/bin/kiichaind
-kiichaind version
-sudo systemctl start kiichaind
+sudo systemctl stop lumerad
+wget https://github.com/LumeraProtocol/lumera/releases/download/v1.7.0/lumera_v1.7.0_linux_amd64.tar.gz
+tar -xvf lumera_v1.7.0_linux_amd64.tar.gz
+rm lumera_v1.7.0_linux_amd64.tar.gz
+rm install.sh
+chmod +x lumerad
+mv lumerad $HOME/go/bin/
+sudo systemctl start lumerad
 ```

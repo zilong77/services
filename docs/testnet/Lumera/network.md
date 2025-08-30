@@ -3,25 +3,25 @@
 ---
 
 ## 📡 RPC Endpoints
-- RPC: `https://rpc1.yourchain.org`
+- RPC: `https://rpc-lumera-testnet.kyronode.xyz`
 
 ---
 
 ## 🔎 API Endpoints
-- API: `https://api1.yourchain.org`
+- API: `https://api-lumera-testnet.kyronode.xyz`
 
 ---
 
 ## 🗂 Address Book
 ```bash
-wget -O $HOME/.yourchaind/config/addrbook.json https://snapshots.yourchain.org/addrbook.json
+wget -O $HOME/.lumera/config/addrbook.json https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Testnet/Lumera/addrbook.json
 ```
 
 ---
 
 ## 📜 Genesis File  
 ```bash
-wget -O $HOME/.yourchaind/config/genesis.json https://snapshots.yourchain.org/genesis.json
+wget -O $HOME/.lumera/config/genesis.json https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Testnet/Lumera/genesis.json
 ```
 
 ---
@@ -29,14 +29,14 @@ wget -O $HOME/.yourchaind/config/genesis.json https://snapshots.yourchain.org/ge
 ## 🔗 Persistent Peers
 *We provide only active peers from our scanner:*
 ```text
-nodeid1@peer1.yourchain.org:26656,
+020caf16885970199588fcfa44c49eedc5e97421@88.198.52.46:30756,71d787e656016ced91ecc9ef2a4a82e9e691524c@65.109.79.185:31656,1f94a485f242fb965e0add87f4fbae10d5af55b2@94.130.143.184:17656,a764a779e04231ed1c7a63421cfadc52832c4f1a@88.198.46.55:23556,bc3601124c46cd53e4ab06b1c0ba07b7deb23e97@195.3.223.174:17656,39b84ac1ec66983759dc39ab5824a162c9b1168e@188.40.66.173:30756,562a569597e5ac818df95257a7fe9b8e8dbbbc2d@138.201.17.210:26656,948ccc369bb83b9ddb423bbb5054568fe995ba4f@5.180.82.147:26656,18eeda9a8caccd8130d65d0658310abe573bf8e4@176.9.8.81:15056,a202e00ce44a9f9764cfe647b6a87b78aae665d6@145.239.9.196:36656,874e39efd7c31c6546350cd8c164c857ab965349@89.147.102.206:26656,5ca72982bcdccec1d14652a6e4a6319e9e3b684a@144.91.86.136:20656,16e553d2a503295a3b2ac62d8410ce96f66fcbdf@135.181.78.21:20656,9ffe7d48c77e175ecdde07e70f95c3056adf9d9d@65.21.220.178:26656,6b552c8ebdbffee1394a5d9974ab05c45cdba843@135.181.238.225:16956,2d6a6b839ab3be8545264be0ce9a92221b8b2f21@161.97.168.103:29656,4ce6b843ad54e727f72c5df85ee21b0611ee40e0@149.50.96.14:20656,bb6f26151809349e706e6748f5fe9c6d5f8e6297@149.50.116.116:20656,7c37a7eb1292b432a8f98ba40d32cb3dd4b3beeb@164.132.247.253:56416,228396bce456ee8dad81adf9db2fd1449d9e2a49@144.217.68.182:21956,05df2ce27cd2f2a5c7ecc8ec4d78c9243e39444b@3.236.181.141:26656,2763906db355f49c58359be0e27a5e4fd6e104fd@18.219.144.87:26656,4ee99f2039eee00535e2197f77cfd23f61803cc0@66.129.102.28:26656,3b78b08bd9d9d0a2b17a944241a849ce04d8607e@44.204.100.172:26656,08d1c0d9c7a184c642d3cbc09fea615906e5ac6e@135.181.181.59:28656,aeb7867b6ac0df3aa99f1a1265b50b0331d5415d@160.250.106.34:30756,ffc44e799ec4cb59611bad61ba4fe979a6a43471@195.3.223.78:20656,b957f2c0c52abf946b39e459d0aecde622a805e4@185.197.195.18:16656,221d579ff9b35887952ac3b686f9b230da21e19e@157.90.67.237:26656,e143ae379b2678dfc0bc29e5d245ccaa58ea0c05@157.180.52.245:17656,2f68418ad7d6383a8caeb91cdf4b45c56d8ef55f@65.21.221.110:28656,8a24daaac44fad0bf9bcc27ee1f91b24a32a7f51@154.91.1.115:26656,2e2f517da93fa36857d43d2e44fad3700730dfa1@152.53.50.118:29656,7d9b40da8f771a16b68b31efabec6f415981d2a9@144.91.69.120:20656,4c6044a66a2224f87c9db2d525ed643ff7567795@37.27.127.216:1020,2d4fed6f5f062ac626946dd940d291816365b9c3@164.68.123.138:20656,09499a6acaf2c16383f4bc590d12b35204923a56@88.99.137.138:16656
 ```
 
 ---
 
 ## 🌱 Seeds
 ```text
-seed1@seed1.yourchain.org:26656,
+faff7c1350468c53121a669ac40e317a4a70c425@seeds.lumera.io:26656
 ```
 
 ---
