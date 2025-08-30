@@ -59,8 +59,8 @@ make install
 
 ## Init & Config
 ```bash
-safrochaind init $MONIKER --chain-id oro_1336-1
-safrochaind config set client chain-id oro_1336-1
+safrochaind init $MONIKER --chain-id safro-testnet-1
+safrochaind config set client chain-id safro-testnet-1
 safrochaind config set client node tcp://localhost:${APP_PORT}657
 ```
 
