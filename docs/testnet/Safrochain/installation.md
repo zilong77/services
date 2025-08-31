@@ -68,8 +68,8 @@ safrochaind config set client node tcp://localhost:${APP_PORT}657
 
 ## Download Genesis & Addrbook
 ```bash
-wget -O $HOME/.safrochain/config/genesis.json https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Testnet/Safrochain/genesis.json
-wget -O $HOME/.safrochain/config/addrbook.json https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Testnet/Safrochain/addrbook.json
+wget -O $HOME/.safrochain/config/genesis.json https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Testnet/Safrochain/genesis.json
+wget -O $HOME/.safrochain/config/addrbook.json https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Testnet/Safrochain/addrbook.json
 ```
 
 ---
@@ -156,7 +156,7 @@ sudo systemctl restart safrochaind && sudo journalctl -u safrochaind -fo cat
 ## Node Synchronize Checker
 ```bash
 # Paste this to your terminal
-bash <(curl -s https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Testnet/Safrochain/safro-sync.sh)
+bash <(curl -s https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Testnet/Safrochain/safro-sync.sh)
 ```
 
 ---

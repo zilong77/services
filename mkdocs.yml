@@ -73,6 +73,11 @@ nav:
           - Upgrade: mainnet/Zenrock/upgrade.md
   - Testnet:
       - Overview: testnet/_index.md
+      - Empeiria:
+          - Network: testnet/Empeiria/network.md
+          - Installation: testnet/Empeiria/installation.md
+          - Cheat Sheet: testnet/Empeiria/cheatsheet.md
+          - Upgrade: testnet/Empeiria/upgrade.md
       - Kiichain:
           - Network: testnet/Kiichain/network.md
           - Installation: testnet/Kiichain/installation.md

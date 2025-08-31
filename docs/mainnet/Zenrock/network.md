@@ -3,31 +3,26 @@
 ---
 
 ## 📡 RPC Endpoints
-- RPC: 
-```bash 
-https://rpc-zenrock.kyronode.xyz
-```
+- RPC: `https://rpc-zenrock.kyronode.xyz`
 
 ---
 
 ## 🔎 API Endpoints
-- API: 
-```bash 
-https://api-zenrock.kyronode.xyz
-```
+- API: `https://api-zenrock.kyronode.xyz`
 
 ---
 
 ## 🗂 Address Book
 ```bash
-wget -O $HOME/.zrchain/config/addrbook.json https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Mainnet/Zenrock/addrbook.json
+wget -O $HOME/.zrchain/config/addrbook.json https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Mainnet/Zenrock/addrbook.json
+
 ```
 
 ---
 
 ## 📜 Genesis File  
 ```bash
-wget -O $HOME/.zrchain/config/genesis.json https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Mainnet/Zenrock/genesis.json
+wget -O $HOME/.zrchain/config/genesis.json https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Mainnet/Zenrock/genesis.json
 ```
 
 ---

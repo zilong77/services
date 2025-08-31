@@ -19,7 +19,7 @@ This guide helps you set up and run a Zenrock Node.
 ## Install Go (if you don't have one)
 ```bash
 cd $HOME
-VER="1.23.1"
+VER="1.23.4"
 wget "https://golang.org/dl/go$VER.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$VER.linux-amd64.tar.gz"
@@ -59,8 +59,8 @@ sudo mv $HOME/zenrockd $HOME/go/bin/
 
 ## Init & Config
 ```bash
-zenrockd init $MONIKER --chain-id diamond-1
-zenrockd config set client chain-id diamond-1
+zenrockd init $MONIKER --chain-id empe-testnet-2
+zenrockd config set client chain-id empe-testnet-2
 zenrockd config set client node tcp://localhost:${APP_PORT}657
 ```
 
@@ -68,16 +68,16 @@ zenrockd config set client node tcp://localhost:${APP_PORT}657
 
 ## Download Genesis & Addrbook
 ```bash
-wget -O $HOME/.zrchain/config/genesis.json https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Mainnet/Zenrock/genesis.json
-wget -O $HOME/.zrchain/config/addrbook.json https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Mainnet/Zenrock/addrbook.json
+wget -O $HOME/.zrchain/config/genesis.json https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Testnet/Zenrock/genesis.json
+wget -O $HOME/.zrchain/config/addrbook.json https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Testnet/Zenrock/addrbook.json
 ```
 
 ---
 
 ## Set Seeds & Peers
 ```bash
-SEEDS="e6c3373d68c504bd89bf77c27a8ac30597afeb2d@zenrock-mainnet-seed.itrocket.net:56656"
-PEERS="2f037a6461c012f3296ab1815b3c47843bcd7c3a@zenrock-mainnet-peer.itrocket.net:59656,5ad8a5de6318529994da817043b268ef617e37ba@34.251.37.55:26656"
+SEEDS="0e0fa76bf61bebb79c9db6890b5c8da78a0f62d3@zenrock-testnet-seed.itrocket.net:56656"
+PEERS="dd2ba8bdb8b42e4127eb442bea27f5192aaba18c@zenrock-testnet-peer.itrocket.net:11656"
 sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/" $HOME/.zrchain/config/config.toml
 sed -i -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.zrchain/config/config.toml
 ```
@@ -156,7 +156,7 @@ sudo systemctl restart zenrockd && sudo journalctl -u zenrockd -fo cat
 ## Node Synchronize Checker
 ```bash
 # Paste this to your terminal
-bash <(curl -s https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Mainnet/Zenrock/zenrock-sync.sh)
+bash <(curl -s https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Testnet/Zenrock/zenrock-sync.sh)
 ```
 
 ---
@@ -203,7 +203,7 @@ echo "{
 # Create a validator using the JSON configuration
 zenrockd tx staking create-validator validator.json \
 --from $WALLET \
---chain-id diamond-1 \
+--chain-id empe-testnet-2 \
 --gas auto \
 --gas-adjustment 1.5 \
 --fees 30urock \

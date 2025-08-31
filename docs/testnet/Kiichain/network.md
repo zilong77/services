@@ -14,14 +14,14 @@
 
 ## 🗂 Address Book
 ```bash
-wget -O $HOME/.kiichain/config/addrbook.json https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Testnet/Kiichain/addrbook.json
+wget -O $HOME/.kiichain/config/addrbook.json https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Testnet/Kiichain/addrbook.json
 ```
 
 ---
 
 ## 📜 Genesis File  
 ```bash
-wget -O $HOME/.kiichain/config/genesis.json https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Testnet/Kiichain/genesis.json
+wget -O $HOME/.kiichain/config/genesis.json https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Testnet/Kiichain/genesis.json
 ```
 
 ---

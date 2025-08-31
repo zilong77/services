@@ -14,14 +14,14 @@
 
 ## 🗂 Address Book
 ```bash
-wget -O $HOME/.lumera/config/addrbook.json https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Testnet/Lumera/addrbook.json
+wget -O $HOME/.lumera/config/addrbook.json https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Testnet/Lumera/addrbook.json
 ```
 
 ---
 
 ## 📜 Genesis File  
 ```bash
-wget -O $HOME/.lumera/config/genesis.json https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Testnet/Lumera/genesis.json
+wget -O $HOME/.lumera/config/genesis.json https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Testnet/Lumera/genesis.json
 ```
 
 ---

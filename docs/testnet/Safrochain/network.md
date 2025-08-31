@@ -14,14 +14,14 @@
 
 ## 🗂 Address Book
 ```bash
-wget -O $HOME/.safrochain/config/addrbook.json https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Testnet/Safrochain/addrbook.json
+wget -O $HOME/.safrochain/config/addrbook.json https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Testnet/Safrochain/addrbook.json
 ```
 
 ---
 
 ## 📜 Genesis File  
 ```bash
-wget -O $HOME/.safrochain/config/genesis.json https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Testnet/Safrochain/genesis.json
+wget -O $HOME/.safrochain/config/genesis.json https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Testnet/Safrochain/genesis.json
 ```
 
 ---

@@ -68,8 +68,8 @@ kiichaind config set client node tcp://localhost:${APP_PORT}657
 
 ## Download Genesis & Addrbook
 ```bash
-wget -O $HOME/.kiichain/config/genesis.json https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Testnet/Kiichain/genesis.json
-wget -O $HOME/.kiichain/config/addrbook.json https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Testnet/Kiichain/addrbook.json
+wget -O $HOME/.kiichain/config/genesis.json https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Testnet/Kiichain/genesis.json
+wget -O $HOME/.kiichain/config/addrbook.json https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Testnet/Kiichain/addrbook.json
 ```
 
 ---
@@ -156,7 +156,7 @@ sudo systemctl restart kiichaind && sudo journalctl -u kiichaind -fo cat
 ## Node Synchronize Checker
 ```bash
 # Paste this to your terminal
-bash <(curl -s https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Testnet/Kiichain/kiichain-sync.sh)
+bash <(curl -s https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Testnet/Kiichain/kiichain-sync.sh)
 ```
 
 ---

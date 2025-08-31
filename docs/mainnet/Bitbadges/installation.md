@@ -49,8 +49,8 @@ source $HOME/.bash_profile
 ```bash
 cd $HOME
 mkdir -p $HOME/.bitbadgeschain
-wget https://github.com/BitBadges/bitbadgeschain/releases/download/v13/bitbadgeschain-linux-amd64 -O /usr/local/bin/bitbadgeschaind
-chmod +x /usr/local/bin/bitbadgeschaind
+wget https://github.com/BitBadges/bitbadgeschain/releases/download/v13/bitbadgeschain-linux-amd64 -O $HOME/go/bin/bitbadgeschaind
+chmod +x $HOME/go/bin/bitbadgeschaind
 ```
 
 ---

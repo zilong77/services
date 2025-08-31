@@ -132,7 +132,7 @@ zenrockd tx staking unbond $(zenrockd keys show $WALLET --bech val -a) 1000000ur
 
 ### Transfer Funds
 ```bash
-zenrockd tx bank send $WALLET_ADDRESS <TO_WALLET_ADDRESS> 1000000urock --gas auto --gas-adjustment 1.5 --fees 30urock -y
+zenrockd tx bank send $WALLET_ADDRESS <TO_WALLET_ADDRESS> 1000000urock --from $WALLET --chain-id gardia-9 --gas auto --gas-adjustment 1.5 --fees 30urock -y
 ```
 
 ---

@@ -70,8 +70,8 @@ lumerad config set client node tcp://localhost:${APP_PORT}657
 
 ## Download Genesis & Addrbook
 ```bash
-wget -O $HOME/.lumera/config/genesis.json https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Testnet/Lumera/genesis.json
-wget -O $HOME/.lumera/config/addrbook.json https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Testnet/Lumera/addrbook.json
+wget -O $HOME/.lumera/config/genesis.json https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Testnet/Lumera/genesis.json
+wget -O $HOME/.lumera/config/addrbook.json https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Testnet/Lumera/addrbook.json
 ```
 
 ---
@@ -158,7 +158,7 @@ sudo systemctl restart lumerad && sudo journalctl -u lumerad -fo cat
 ## Node Synchronize Checker
 ```bash
 # Paste this to your terminal
-bash <(curl -s https://github.com/kyronode/all-about-cosmos/raw/refs/heads/main/Testnet/Lumera/lumera-sync.sh)
+bash <(curl -s https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Testnet/Lumera/lumera-sync.sh)
 ```
 
 ---
