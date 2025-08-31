@@ -94,6 +94,7 @@ nav:
           - Cheat Sheet: testnet/Safrochain/cheatsheet.md
           - Upgrade: testnet/Safrochain/upgrade.md
       - Zenrock:
+          - Network: testnet/Zenrock/network.md
           - Installation: testnet/Zenrock/installation.md
           - Cheat Sheet: testnet/Zenrock/cheatsheet.md
           - Upgrade: testnet/Zenrock/upgrade.md
