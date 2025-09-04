@@ -1,4 +1,4 @@
-# 📑 Kiichain Cheat Sheet
+# 📑 Zenrock Cheat Sheet
 
 ## 🔧 Service Operations
 
