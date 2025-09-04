@@ -1937,7 +1937,7 @@ sudo systemctl restart paxid &amp;&amp; sudo journalctl -u paxid -fo cat
 <hr />
 <h2 id="node-synchronize-checker">Node Synchronize Checker</h2>
 <pre><code class="language-bash">#!/bin/bash
-rpc_port=$(grep -m 1 -oP '^laddr = &quot;\K[^&quot;]+' &quot;~/go/bin/paxi/config/config.toml&quot; | cut -d ':' -f 3)
+rpc_port=$(grep -m 1 -oP '^laddr = &quot;\K[^&quot;]+' &quot;$HOME/go/bin/paxi/config/config.toml&quot; | cut -d ':' -f 3)
 while true; do
   local_height=$(curl -s localhost:$rpc_port/status | jq -r '.result.sync_info.latest_block_height')
   network_height=$(curl -s https://mainnet-rpc.paxinet.io/status | jq -r '.result.sync_info.latest_block_height')
