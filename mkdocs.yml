@@ -71,6 +71,9 @@ nav:
           - Installation: mainnet/Zenrock/installation.md
           - Cheat Sheet: mainnet/Zenrock/cheatsheet.md
           - Upgrade: mainnet/Zenrock/upgrade.md
+      - Paxi:
+          - Installation: mainnet/Paxi/installation.md
+          - Cheat Sheet: mainnet/Paxi/cheatsheet.md
   - Testnet:
       - Overview: testnet/_index.md
       - Empeiria:
