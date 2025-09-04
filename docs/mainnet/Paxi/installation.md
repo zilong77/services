@@ -1,7 +1,8 @@
 # 🚀 Paxi Installation Guide
 
-This guide helps you set up and run a Bitbadges Node.  
-🔗 [Website](https://paxinet.io/) | [Discord](https://discord.gg/rA9Xzs69tx) | [Twitter](https://x.com/paxiweb3)
+This guide helps you set up and run a Paxi Node.  
+🔗 [Website](https://paxinet.io/) | [Discord](https://discord.gg/rA9Xzs69tx) | [Twitter](https://x.com/paxiweb3) | [Our Paxi Explorer](https://explorer.kyronode.xyz/paxi)
+
 
 ---
 
@@ -137,7 +138,7 @@ EOF
 ```bash
 sudo systemctl daemon-reload
 sudo systemctl enable paxid
-sudo systemctl restart paxid && sudo journalctl -u paxid -fo cat
+sudo systemctl start paxid && sudo journalctl -u paxid -fo cat
 ```
 
 ---
