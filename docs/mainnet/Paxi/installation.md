@@ -35,7 +35,7 @@ source $HOME/.bash_profile
 
 ## Set Environment Variables
 ```bash
-# WARNING: Please replace <YOUR_WALLET>, <YOUR_MONIKER>, and <CUSTOM_PORT>
+# WARNING: Please replace <YOUR_WALLET>, <YOUR_MONIKER>, and <CUSTOM_PORT> e.g 56,43,75
 # with your own information before running the commands.
 echo "export WALLET=<YOUR_WALLET>" >> $HOME/.bash_profile
 echo "export MONIKER=<YOUR_MONIKER>" >> $HOME/.bash_profile
@@ -220,7 +220,7 @@ echo "{
   \"details\": \"<YOUR_DETAILS>\",
   \"commission-rate\": \"0.05\",
   \"commission-max-rate\": \"0.25\",
-  \"commission-max-change-rate\": \"0.01\",
+  \"commission-max-change-rate\": \"0.1\",
   \"min-self-delegation\": \"1\"
 }" > validator.json
 
