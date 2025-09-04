@@ -166,7 +166,7 @@ sudo systemctl restart paxid && sudo journalctl -u paxid -fo cat
 ## Node Synchronize Checker
 ```bash
 #!/bin/bash
-rpc_port=$(grep -m 1 -oP '^laddr = "\K[^"]+' "~/go/bin/paxi/config/config.toml" | cut -d ':' -f 3)
+rpc_port=$(grep -m 1 -oP '^laddr = "\K[^"]+' "$HOME/go/bin/paxi/config/config.toml" | cut -d ':' -f 3)
 while true; do
   local_height=$(curl -s localhost:$rpc_port/status | jq -r '.result.sync_info.latest_block_height')
   network_height=$(curl -s https://mainnet-rpc.paxinet.io/status | jq -r '.result.sync_info.latest_block_height')
