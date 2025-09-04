@@ -1788,8 +1788,8 @@
 
 
 <h1 id="paxi-installation-guide">🚀 Paxi Installation Guide</h1>
-<p>This guide helps you set up and run a Bitbadges Node.<br />
-🔗 <a href="https://paxinet.io/">Website</a> | <a href="https://discord.gg/rA9Xzs69tx">Discord</a> | <a href="https://x.com/paxiweb3">Twitter</a></p>
+<p>This guide helps you set up and run a Paxi Node.<br />
+🔗 <a href="https://paxinet.io/">Website</a> | <a href="https://discord.gg/rA9Xzs69tx">Discord</a> | <a href="https://x.com/paxiweb3">Twitter</a> | <a href="https://explorer.kyronode.xyz/paxi">Our Paxi Explorer</a></p>
 <hr />
 <h2 id="recommended-specifications">📋 Recommended Specifications</h2>
 <table>
@@ -1917,7 +1917,7 @@ EOF
 <h2 id="start-service">Start Service</h2>
 <pre><code class="language-bash">sudo systemctl daemon-reload
 sudo systemctl enable paxid
-sudo systemctl restart paxid &amp;&amp; sudo journalctl -u paxid -fo cat
+sudo systemctl start paxid &amp;&amp; sudo journalctl -u paxid -fo cat
 </code></pre>
 <hr />
 <h2 id="install-wasm-sync">Install Wasm Sync</h2>
