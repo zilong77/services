@@ -1,7 +1,7 @@
-# 🚀 Bitbadges Installation Guide
+# 🚀 Paxi Installation Guide
 
 This guide helps you set up and run a Bitbadges Node.  
-🔗 [Website](https://bitbadges.io/) | [Discord](https://discord.gg/WN9XgGun) | [Twitter](https://x.com/bitbadges_io)
+🔗 [Website](https://paxinet.io/) | [Discord](https://discord.gg/rA9Xzs69tx) | [Twitter](https://x.com/paxiweb3)
 
 ---
 
@@ -48,36 +48,28 @@ source $HOME/.bash_profile
 ## Download Binary
 ```bash
 cd $HOME
-mkdir -p $HOME/.bitbadgeschain
-wget https://github.com/BitBadges/bitbadgeschain/releases/download/v13/bitbadgeschain-linux-amd64 -O $HOME/go/bin/bitbadgeschaind
-chmod +x $HOME/go/bin/bitbadgeschaind
+git clone https://github.com/paxi-web3/paxi.git
+cd paxi
+git checkout v1.0.5
+make install
+cp ~/paxid/paxid ~/go/bin
 ```
 
 ---
 
 ## Init & Config
 ```bash
-bitbadgeschaind init $MONIKER --chain-id bitbadges-1
-bitbadgeschaind config set client chain-id bitbadges-1
-bitbadgeschaind config set client node tcp://localhost:${APP_PORT}657
+paxid init $MONIKER --chain-id paxi-mainnet
+paxid config set client chain-id paxi-mainnet
+paxid config set client node tcp://localhost:${APP_PORT}657
 ```
 
 ---
 
 ## Download Genesis & Addrbook
 ```bash
-wget -O $HOME/.bitbadgeschain/config/genesis.json https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Mainnet/Bitbadges/genesis.json
-wget -O $HOME/.bitbadgeschain/config/addrbook.json https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Mainnet/Bitbadges/addrbook.json
-```
-
----
-
-## Set Seeds & Peers
-```bash
-SEEDS="a26f1e34a79ef25037bdcdbf675b5eb9b6f0ee48@135.181.79.101:11756"
-PEERS="f23f1bbd14dc5d2bec36ac6179ec10646e6c441b@149.86.227.180:12056,01646d1b565922a8f9b29990d4f84418be277fdd@159.69.29.172:38656,2e5db65945f66f56c5c2c16b267936de902a28dc@152.53.254.219:13556,a9d17c23090a03b242ce110cccf517b04be99699@51.195.60.23:32956,5f0816cc8802e933f7894200a8effbcde8adaea2@65.108.204.225:32956,1be74320788c2b42bc6e0855ae0f77a80aa84b94@65.108.7.249:32956,1b96669cb6abab3c29b58e35f42dfa667d4d5763@157.180.6.152:24656,2df37851a4b2679dc3db0822318ec403d0e527bd@37.27.52.37:27656,98dac6b8801ce7aa956841b2b67d3c92c6e4374e@135.181.238.225:17156,6af383dd6b8cb9ab7075ef552bd0ba0361c09a6e@152.53.91.160:38656,f545cbb1a01c6846e17ea8785da5d5c7042da009@65.21.132.31:22656,1c80babccceb5cb4ed40959017348561f9170f66@46.232.249.218:13556,90a0e3bb00b1bc8c9b47bea15b9c850d1cf07c69@38.242.134.158:38656,a26f1e34a79ef25037bdcdbf675b5eb9b6f0ee48@135.181.79.101:11756,18b9107afecfc97797b7c0237ed48f35543f2753@152.53.147.91:26656,01c6914b236aa686e6ad0daa88affcbf6802dd7b@37.120.178.250:13556,13bf086c3e777f5b24d51c1fe322182dc3321f36@157.245.156.73:10656,ddac35eb1f99c15f3caa26febf2e19e2a937ed4d@152.53.182.15:13556,f1aaac0ff6cb795ea254bfb2c4df6db185539776@149.102.143.185:38656,dcf245b19e2089b7006b21a273eeb9833f55b774@159.223.85.249:13556,47b6fde031c1513f2a8887147c48c7bdbcf96791@65.21.234.111:13556,dcfe30be9cb585d1f8391ae06cc71847f6ef85e4@84.247.185.120:13556,afa28c23cb8ccea8a6f6474bc1359412c68751bc@173.212.196.38:17956,d0605b76f3618e488db0ee417258f6296c078bf1@149.50.101.137:12256,9d8affecc081f6d9fa48cc889a21fc7e2865bde6@152.53.162.92:13556,4d4021ca298aaa65d39fe74b4b684160282094d9@164.68.111.174:17956,67e1d00378d985bb04c48faae25aba3b44f2e04b@152.53.255.227:13556,03e65d19321f384207c5a923627176453655c911@65.108.198.145:21656,02190b59f894324cbcb390072b8a443ddcd72626@135.181.139.249:36656,503bcca2e177810d388044bb3cbb628bd1588b3c@152.53.250.230:13556,67ed37309251eea4f0884adcc2517b0dad7ea52e@157.180.52.245:20656,e65ae8c8fbf16d1f49f072e33963c3cb59877e3e@88.99.149.170:13556,a2b7feb3a3646d7c5b7f1bed1068cc77ce188c36@152.53.147.137:13556"
-sed -i -e "s/^seeds *=.*/seeds = \"$SEEDS\"/" $HOME/.bitbadgeschain/config/config.toml
-sed -i -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.bitbadgeschain/config/config.toml
+curl -Ls https://snapshot-t.vinjan.xyz/paxi/genesis.json > ~/go/bin/paxi/config/genesis.json
+curl -Ls https://snapshot-t.vinjan.xyz/paxi/addrbook.json > ~/go/bin/paxi/config/addrbook.json
 ```
 
 ---
@@ -91,7 +83,7 @@ s%:9090%:${APP_PORT}090%g;
 s%:9091%:${APP_PORT}091%g;
 s%:8545%:${APP_PORT}545%g;
 s%:8546%:${APP_PORT}546%g;
-s%:6065%:${APP_PORT}065%g" $HOME/.bitbadgeschain/config/app.toml
+s%:6065%:${APP_PORT}065%g" ~/go/bin/paxi/config/app.toml
 
 # config.toml
 sed -i.bak -e "s%:26658%:${APP_PORT}658%g;
@@ -99,41 +91,40 @@ s%:26657%:${APP_PORT}657%g;
 s%:6060%:${APP_PORT}060%g;
 s%:26656%:${APP_PORT}656%g;
 s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${APP_PORT}656\"%;
-s%:26660%:${APP_PORT}660%g" $HOME/.bitbadgeschain/config/config.toml
+s%:26660%:${APP_PORT}660%g" ~/go/bin/paxi/config/config.toml
 ```
 
 ---
 
 ## Pruning
 ```bash
-sed -i -e "s/^pruning *=.*/pruning = \"custom\"/" $HOME/.bitbadgeschain/config/app.toml 
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME/.bitbadgeschain/config/app.toml
-sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"10\"/" $HOME/.bitbadgeschain/config/app.toml
+sed -i -e "s/^pruning *=.*/pruning = \"custom\"/" ~/go/bin/paxi/config/app.toml 
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" ~/go/bin/paxi/config/app.toml
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"10\"/" ~/go/bin/paxi/config/app.toml
 ```
 
 ---
 
 ## Min Gas, Prometheus, Indexer
 ```bash
-sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "0.025ubadge"|g' $HOME/.bitbadgeschain/config/app.toml
-sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.bitbadgeschain/config/config.toml
-sed -i -e "s/^indexer *=.*/indexer = \"null\"/" $HOME/.bitbadgeschain/config/config.toml
+sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "0.01upaxi"|g' ~/go/bin/paxi/config/app.toml
+sed -i -e "s/prometheus = false/prometheus = true/" ~/go/bin/paxi/config/config.toml
+sed -i -e "s/^indexer *=.*/indexer = \"null\"/" ~/go/bin/paxi/config/config.toml
 ```
 
 ---
 
 ## Create Service File
 ```bash
-sudo tee /etc/systemd/system/bitbadgeschaind.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/paxid.service > /dev/null <<EOF
 [Unit]
-Description=bitbadgeschaind Node
+Description=paxi
 After=network-online.target
 [Service]
 User=$USER
-WorkingDirectory=$HOME/.bitbadgeschain
-ExecStart=$(which bitbadgeschaind) start --home $HOME/.bitbadgeschain
+ExecStart=$(which paxid) start
 Restart=on-failure
-RestartSec=5
+RestartSec=3
 LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
@@ -145,16 +136,51 @@ EOF
 ## Start Service
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl enable bitbadgeschaind
-sudo systemctl restart bitbadgeschaind && sudo journalctl -u bitbadgeschaind -fo cat
+sudo systemctl enable paxid
+sudo systemctl restart paxid && sudo journalctl -u paxid -fo cat
+```
+
+---
+
+## Install Wasm Sync
+```bash
+curl -sL https://raw.githubusercontent.com/vinjan23/Mainnet/refs/heads/main/Paxi/wasm |bash
+sudo systemctl restart paxid
+```
+
+---
+
+## Snapshot
+```bash
+sudo apt install lz4 -y
+sudo systemctl stop paxid
+cp ~/go/bin/paxi/data/priv_validator_state.json ~/go/bin/paxi/priv_validator_state.json.backup
+paxid tendermint unsafe-reset-all --home ~/go/bin/paxi --keep-addr-book
+curl -L https://snapshot-t.vinjan.xyz/paxi/latest.tar.lz4  | lz4 -dc - | tar -xf - -C ~/go/bin/paxi
+mv ~/go/bin/paxi/priv_validator_state.json.backup ~/go/bin/paxi/data/priv_validator_state.json
+sudo systemctl restart paxid && sudo journalctl -u paxid -fo cat
 ```
 
 ---
 
 ## Node Synchronize Checker
 ```bash
-# Paste this to your terminal
-bash <(curl -s https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Mainnet/Bitbadges/bitbadges-sync.sh)
+#!/bin/bash
+rpc_port=$(grep -m 1 -oP '^laddr = "\K[^"]+' "~/go/bin/paxi/config/config.toml" | cut -d ':' -f 3)
+while true; do
+  local_height=$(curl -s localhost:$rpc_port/status | jq -r '.result.sync_info.latest_block_height')
+  network_height=$(curl -s https://mainnet-rpc.paxinet.io/status | jq -r '.result.sync_info.latest_block_height')
+  if ! [[ "$local_height" =~ ^[0-9]+$ ]] || ! [[ "$network_height" =~ ^[0-9]+$ ]]; then
+    echo -e "\033[1;31mError: Invalid block height data. Retrying...\033[0m"
+    sleep 5
+    continue
+  fi
+  blocks_left=$((network_height - local_height))
+  echo -e "\033[1;33mNode Height:\033[1;34m $local_height\033[0m \
+\033[1;33m| Network Height:\033[1;36m $network_height\033[0m \
+\033[1;33m| Blocks Left:\033[1;31m $blocks_left\033[0m"
+  sleep 5
+done
 ```
 
 ---
@@ -162,16 +188,16 @@ bash <(curl -s https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/
 ## Create or Restore Wallet
 `Create new wallet and save ur mnemonics securely`
 ```bash
-bitbadgeschaind keys add $WALLET
+paxid keys add $WALLET
 ```
 `If u want to restore use this command`
 ```bash
-bitbadgeschaind keys add $WALLET --recover
+paxid keys add $WALLET --recover
 ```
 `Set keys variable enviroment`
 ```bash
-WALLET_ADDRESS=$(bitbadgeschaind keys show $WALLET -a)
-VALOPER_ADDRESS=$(bitbadgeschaind keys show $WALLET --bech val -a)
+WALLET_ADDRESS=$(paxid keys show $WALLET -a)
+VALOPER_ADDRESS=$(paxid keys show $WALLET --bech val -a)
 echo "export WALLET_ADDRESS="$WALLET_ADDRESS >> $HOME/.bash_profile
 echo "export VALOPER_ADDRESS="$VALOPER_ADDRESS >> $HOME/.bash_profile
 source $HOME/.bash_profile
@@ -185,8 +211,8 @@ If ur node has been fully synchronized, then u can create ur validator:
 ```bash
 cd $HOME
 echo "{
-  \"pubkey\": {\"@type\": \"/cosmos.crypto.ed25519.PubKey\", \"key\": \"$(bitbadgeschaind tendermint show-validator | grep -Po '\"key\":\s*\"\K[^\"]*')\"},
-  \"amount\": \"1000000000ubadge\",
+  \"pubkey\": {\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\": \"$(paxid tendermint show-validator | grep -Po '\"key\":\s*\"\K[^\"]*')\"},
+  \"amount\": \"1000000upaxi\",
   \"moniker\": \"<YOUR_MONIKER>\",
   \"identity\": \"<YOUR_IDENTITY>\",
   \"website\": \"<YOUR_WEBSITE>\",
@@ -199,10 +225,10 @@ echo "{
 }" > validator.json
 
 # Create a validator using the JSON configuration
-bitbadgeschaind tx staking create-validator validator.json \
+paxid tx staking create-validator validator.json \
     --from wallet \
-    --chain-id bitbadges-1 \
-    --gas-prices 0.025ubadge \
+    --chain-id paxi-mainnet \
+    --fees 15000upaxi \
     --gas-adjustment 1.3 \
     --gas auto \
     -y
@@ -213,10 +239,13 @@ bitbadgeschaind tx staking create-validator validator.json \
 ## Delete Node
 `Please backup ur wallet and important file like "priv_validator_key.json" before deleting.` 
 ```bash
-sudo systemctl stop bitbadgeschaind
-sudo systemctl disable bitbadgeschaind
+sudo systemctl stop paxid
+sudo systemctl disable paxid
 sudo systemctl daemon-reload
-sudo rm -rf /etc/systemd/system/bitbadgeschaind.service
-sudo rm $(which bitbadgeschaind)
-sudo rm -rf $HOME/.bitbadgeschain
+sudo rm -rf /etc/systemd/system/paxid.service
+sudo rm $(which paxid)
+sudo rm -rf ~/go/bin/paxi/
 ```
+
+
+Thanks to: [Vinjan.Inc](https://service.vinjan.xyz)

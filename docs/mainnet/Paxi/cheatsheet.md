@@ -1,35 +1,35 @@
-# 📑 Bitbadges Cheat Sheet
+# 📑 Paxi Cheat Sheet
 
 ## 🔧 Service Operations
 
 ### Check logs
 ```bash
-sudo journalctl -u bitbadgeschaind -fo cat
+sudo journalctl -u paxid -fo cat
 ```
 
 ### Check service status
 ```bash
-sudo systemctl status bitbadgeschaind
+sudo systemctl status paxid
 ```
 
 ### Node info
 ```bash
-bitbadgeschaind status 2>&1 | jq
+paxid status 2>&1 | jq
 ```
 
 ### Start service
 ```bash
-sudo systemctl start bitbadgeschaind
+sudo systemctl start paxid
 ```
 
 ### Stop service
 ```bash
-sudo systemctl stop bitbadgeschaind
+sudo systemctl stop paxid
 ```
 
 ### Restart service
 ```bash
-sudo systemctl restart bitbadgeschaind
+sudo systemctl restart paxid
 ```
 
 ### Reload services
@@ -39,12 +39,12 @@ sudo systemctl daemon-reload
 
 ### Enable service
 ```bash
-sudo systemctl enable bitbadgeschaind
+sudo systemctl enable paxid
 ```
 
 ### Disable service
 ```bash
-sudo systemctl disable bitbadgeschaind
+sudo systemctl disable paxid
 ```
 
 ---
@@ -53,42 +53,42 @@ sudo systemctl disable bitbadgeschaind
 
 ### Add New Wallet
 ```bash
-bitbadgeschaind keys add $WALLET
+paxid keys add $WALLET
 ```
 
 ### Restore executing wallet
 ```bash
-bitbadgeschaind keys add $WALLET --recover
+paxid keys add $WALLET --recover
 ```
 
 ### List All Wallets
 ```bash
-bitbadgeschaind keys list
+paxid keys list
 ```
 
 ### Delete wallet
 ```bash
-bitbadgeschaind keys delete $WALLET
+paxid keys delete $WALLET
 ```
 
 ### Check Balance
 ```bash
-bitbadgeschaind q bank balances $WALLET_ADDRESS
+paxid q bank balances $WALLET_ADDRESS
 ```
 
 ### Export Key (save to wallet.backup)
 ```bash
-bitbadgeschaind keys export $WALLET
+paxid keys export $WALLET
 ```
 
 ### View EVM Private Key
 ```bash
-bitbadgeschaind keys unsafe-export-eth-key $WALLET
+paxid keys unsafe-export-eth-key $WALLET
 ```
 
 ### Import Key (restore from wallet.backup)
 ```bash
-bitbadgeschaind keys import $WALLET wallet.backup
+paxid keys import $WALLET wallet.backup
 ```
 
 ---
@@ -97,42 +97,42 @@ bitbadgeschaind keys import $WALLET wallet.backup
 
 ### Withdraw all rewards
 ```bash
-bitbadgeschaind tx distribution withdraw-all-rewards --from $WALLET --chain-id bitbadges-1 --fees 0.025ubadge
+paxid tx distribution withdraw-all-rewards --from $WALLET --chain-id paxi-mainnet --gas auto --gas-adjustment 1.5 --fees 15000upaxi -y
 ```
 
 ### Withdraw rewards and commission from your validator
 ```bash
-bitbadgeschaind tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id bitbadges-1 --gas auto --gas-adjustment 1.3 --fees 0.025ubadge -y
+paxid tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id paxi-mainnet --gas auto --gas-adjustment 1.5 --fees 15000upaxi -y
 ```
 
 ### Check your balance
 ```bash
-bitbadgeschaind query bank balances $WALLET_ADDRESS
+paxid query bank balances $WALLET_ADDRESS
 ```
 
 ### Delegate to Yourself
 ```bash
-bitbadgeschaind tx staking delegate $(bitbadgeschaind keys show $WALLET --bech val -a) 1000000000ubadge --from $WALLET --chain-id bitbadges-1 --gas auto --gas-adjustment 1.3 --fees 0.025ubadge -y
+paxid tx staking delegate $(paxid keys show $WALLET --bech val -a) 1000000upaxi --from $WALLET --chain-id paxi-mainnet --gas auto --gas-adjustment 1.5 --fees 15000upaxi -y
 ```
 
 ### Delegate
 ```bash
-bitbadgeschaind tx staking delegate <TO_VALOPER_ADDRESS> 1000000000ubadge --from $WALLET --chain-id bitbadges-1 --gas auto --gas-adjustment 1.3 --gas auto --gas-adjustment 1.3 --fees 0.025ubadge -y
+paxid tx staking delegate <TO_VALOPER_ADDRESS> 1000000upaxi --from $WALLET --chain-id paxi-mainnet --gas auto --gas-adjustment 1.5 --fees 15000upaxi -y
 ```
 
 ### Redelegate Stake to Another Validator
 ```bash
-bitbadgeschaind tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000000ubadge --from $WALLET --chain-id bitbadges-1 --gas auto --gas-adjustment 1.3 --fees 0.025ubadge -y
+paxid tx staking redelegate $VALOPER_ADDRESS <TO_VALOPER_ADDRESS> 1000000upaxi --from $WALLET --chain-id paxi-mainnet --gas auto --gas-adjustment 1.5 --fees 15000upaxi -y
 ```
 
 ### Unbond
 ```bash
-bitbadgeschaind tx staking unbond $(bitbadgeschaind keys show $WALLET --bech val -a) 1000000000ubadge --from $WALLET --chain-id bitbadges-1 --gas auto --gas-adjustment 1.3 --fees 0.025ubadge -y
+paxid tx staking unbond $(paxid keys show $WALLET --bech val -a) 1000000upaxi --from $WALLET --chain-id paxi-mainnet --gas auto --gas-adjustment 1.5 --fees 15000upaxi -y
 ```
 
 ### Transfer Funds
 ```bash
-bitbadgeschaind tx bank send $WALLET_ADDRESS <TO_WALLET_ADDRESS> 1000000000ubadge --gas auto --gas-adjustment 1.3 --fees 0.025ubadge -y
+paxid tx bank send $WALLET_ADDRESS <TO_WALLET_ADDRESS> 1000000upaxi --gas auto --gas-adjustment 1.5 --fees 15000upaxi -y
 ```
 
 ---
@@ -141,54 +141,54 @@ bitbadgeschaind tx bank send $WALLET_ADDRESS <TO_WALLET_ADDRESS> 1000000000ubadg
 
 ### Validator info
 ```bash
-bitbadgeschaind status 2>&1 | jq
+paxid status 2>&1 | jq
 ```
 
 ### Validator Details
 ```bash
-bitbadgeschaind q staking validator $(bitbadgeschaind keys show $WALLET --bech val -a)
+paxid q staking validator $(paxid keys show $WALLET --bech val -a)
 ```
 
 ### Jailing info
 ```bash
-bitbadgeschaind q slashing signing-info $(bitbadgeschaind tendermint show-validator)
+paxid q slashing signing-info $(paxid tendermint show-validator)
 ```
 
 ### Slashing parameters
 ```bash
-bitbadgeschaind q slashing params
+paxid q slashing params
 ```
 
 ### Unjail validator
 ```bash
-bitbadgeschaind tx slashing unjail --from $WALLET --chain-id bitbadges-1 --gas auto --gas-adjustment 1.3 --fees 0.025ubadge -y
+paxid tx slashing unjail --from $WALLET --chain-id paxi-mainnet --gas auto --gas-adjustment 1.5 --fees 15000upaxi -y
 ```
 
 ### Active Validators List
 ```bash
-bitbadgeschaind q staking validators -oj --limit=2000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10;6)|floor|tostring) + " " + .description.moniker' | sort -gr | nl
+paxid q staking validators -oj --limit=2000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10;6)|floor|tostring) + " " + .description.moniker' | sort -gr | nl
 ```
 
 ### Check Validator key
 ```bash
-[[ $(bitbadgeschaind q staking validator $VALOPER_ADDRESS -oj | jq -r .consensus_pubkey.key) = $(bitbadgeschaind status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "Your key status is ok" || echo -e "Your key status is error"
+[[ $(paxid q staking validator $VALOPER_ADDRESS -oj | jq -r .consensus_pubkey.key) = $(paxid status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "Your key status is ok" || echo -e "Your key status is error"
 ```
 
 ### Signing info
 ```bash
-bitbadgeschaind q slashing signing-info $(bitbadgeschaind tendermint show-validator)
+paxid q slashing signing-info $(paxid tendermint show-validator)
 ```
 
 ### Edit Validator
 ```bash
-bitbadgeschaind tx staking edit-validator \
+paxid tx staking edit-validator \
 --commission-rate 0.05 \
 --new-moniker "$MONIKER" \
 --identity "" \
 --details "Kyronode for all" \
 --from $WALLET \
---chain-id bitbadges-1 \
---fees 0.025ubadge \
+--chain-id paxi-mainnet \
+--fees 15000upaxi \
 -y
 ```
 
@@ -198,15 +198,15 @@ bitbadgeschaind tx staking edit-validator \
 
 ### Proposals List
 ```bash
-bitbadgeschaind query gov proposals
+paxid query gov proposals
 ```
 
 ### View proposal
 ```bash
-bitbadgeschaind query gov proposal 1
+paxid query gov proposal 1
 ```
 
 ### Vote
 ```bash
-bitbadgeschaind tx gov vote 1 yes --from $WALLET --chain-id bitbadges-1 --gas auto --gas-adjustment 1.3 --fees 0.025ubadge -y
+paxid  tx gov vote 1 yes --from $WALLET --chain-id paxi-mainnet --gas auto --gas-adjustment 1.5 --fees 15000upaxi -y
 ```
