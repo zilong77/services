@@ -226,7 +226,7 @@ echo "{
 
 # Create a validator using the JSON configuration
 paxid tx staking create-validator validator.json \
-    --from wallet \
+    --from $WALLET \
     --chain-id paxi-mainnet \
     --fees 15000upaxi \
     --gas-adjustment 1.3 \
