@@ -1,4 +1,4 @@
-# ⚡ Upgrade - Bitbadges (Mainnet)
+# ⚡ Upgrade - Paxi (Mainnet)
 
 ## Manual Upgrade
 
