@@ -145,7 +145,7 @@ sudo systemctl start paxid && sudo journalctl -u paxid -fo cat
 
 ## Install Wasm Sync
 ```bash
-curl -sL https://raw.githubusercontent.com/vinjan23/Mainnet/refs/heads/main/Paxi/wasm |bash
+bash <(curl -s https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Mainnet/Paxi/wasm.sh)
 sudo systemctl restart paxid
 ```
 

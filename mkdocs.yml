@@ -74,6 +74,7 @@ nav:
       - Paxi:
           - Installation: mainnet/Paxi/installation.md
           - Cheat Sheet: mainnet/Paxi/cheatsheet.md
+          - Upgrade: mainnet/Paxi/upgrade.md
   - Testnet:
       - Overview: testnet/_index.md
       - Empeiria:
