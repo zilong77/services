@@ -17,6 +17,13 @@ This guide helps you set up and run a Paxi Node.
 
 ---
 
+## Automatic Installation
+```bash
+bash <(curl -s https://raw.githubusercontent.com/kyronode/all-about-cosmos/refs/heads/main/Mainnet/Paxi/paxi-auto.sh)
+```
+
+---
+
 ## Install Go (if you don't have one)
 ```bash
 cd $HOME
